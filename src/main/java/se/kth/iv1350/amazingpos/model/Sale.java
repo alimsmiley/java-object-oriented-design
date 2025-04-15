@@ -2,6 +2,7 @@ package se.kth.iv1350.amazingpos.model;
 
 
 import java.time.LocalTime;
+
 import se.kth.iv1350.amazingpos.integration.Printer;
 
 
@@ -13,7 +14,7 @@ public class Sale {
     private int runningTotal;
     private LocalTime saleTime;
     private int vat;
-    private int itemQuantity;
+    
     private int finalAmount;
     private Receipt receipt;
     private Sale paidSale;
