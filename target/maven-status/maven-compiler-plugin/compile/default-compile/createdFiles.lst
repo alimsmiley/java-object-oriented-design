@@ -1,0 +1,15 @@
+se\kth\iv1350\amazingpos\integration\DiscountDataBase.class
+se\kth\iv1350\amazingpos\model\SaleDTO.class
+se\kth\iv1350\amazingpos\model\DiscountDTO.class
+se\kth\iv1350\amazingpos\controller\Controller.class
+se\kth\iv1350\amazingpos\integration\ExternalInventorySystem.class
+se\kth\iv1350\amazingpos\model\Receipt.class
+se\kth\iv1350\amazingpos\model\Payment.class
+se\kth\iv1350\amazingpos\integration\RegistryCreator.class
+se\kth\iv1350\amazingpos\view\View.class
+se\kth\iv1350\amazingpos\integration\ExternalAccountingSystem.class
+se\kth\iv1350\amazingpos\model\CashRegister.class
+se\kth\iv1350\amazingpos\startup\Main.class
+se\kth\iv1350\amazingpos\model\ItemDTO.class
+se\kth\iv1350\amazingpos\integration\Printer.class
+se\kth\iv1350\amazingpos\model\Sale.class
