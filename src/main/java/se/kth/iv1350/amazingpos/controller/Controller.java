@@ -1,7 +1,7 @@
 
 package se.kth.iv1350.amazingpos.controller;
 import se.kth.iv1350.amazingpos.model.Sale;
-//hello
+//hello there
 /**
  * This is the applications only controller
  * 
