@@ -9,5 +9,7 @@ package se.kth.iv1350.amazingpos.integration;
  * @author 10478ALES
  */
 public class DiscountDataBase {
-    
+    DiscountDataBase(){
+        
+    }
 }
