@@ -6,10 +6,13 @@ package se.kth.iv1350.amazingpos.integration;
 
 /**
  *
- * @author 10478ALES
+ * Includes database for all discount types
  */
 public class DiscountDataBase {
+    /**
+     * Creates an instance of discount database
+     */
     DiscountDataBase(){
-        
+
     }
 }

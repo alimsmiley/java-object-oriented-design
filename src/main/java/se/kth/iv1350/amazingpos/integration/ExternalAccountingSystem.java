@@ -6,10 +6,13 @@ package se.kth.iv1350.amazingpos.integration;
 
 /**
  *
- * @author 10478ALES
+ * Includes data about accounting information
  */
 public class ExternalAccountingSystem {
+    /**
+     * Creates an instance of accounting system
+     */
     ExternalAccountingSystem(){
-        
+
     }
 }

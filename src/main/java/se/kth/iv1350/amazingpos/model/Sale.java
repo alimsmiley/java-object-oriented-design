@@ -11,7 +11,7 @@ import se.kth.iv1350.amazingpos.integration.Printer;
  * One single sale made by one single customer and paid with one payment. 
  */
 public class Sale {
-    private LinkedList<Node> shoppingCart;
+    private ShoppingList shoppingCart;
     private int runningTotal;
     private LocalTime saleTime;
     private int vat;

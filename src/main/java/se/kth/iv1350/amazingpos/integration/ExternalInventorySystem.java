@@ -6,10 +6,13 @@ package se.kth.iv1350.amazingpos.integration;
 
 /**
  *
- * @author 10478ALES
+ * Includes a database of information about all items
  */
 public class ExternalInventorySystem {
+    /**
+     * Creates an instance of the inventory system
+     */
     ExternalInventorySystem(){
-        
+
     }
 }

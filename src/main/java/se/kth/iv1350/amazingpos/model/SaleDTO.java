@@ -9,5 +9,14 @@ package se.kth.iv1350.amazingpos.model;
  * @author 10478ALES
  */
 public class SaleDTO {
-    
+    private ItemDTO lastRegisteredItem;
+    private ShoppingList listOfRegisteredItem;
+    private
+    private
+    private
+    private
+
+    public SaleDTO(){
+
+    }
 }
