@@ -19,6 +19,7 @@ public class Main {
         View view = new View(contr);
         view.runFakeExecution();
         RegistryCreator registryCreator = new RegistryCreator();
+        Printer printer = new Printer();
     }
     
 }

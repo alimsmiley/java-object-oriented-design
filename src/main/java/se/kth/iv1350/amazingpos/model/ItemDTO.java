@@ -8,6 +8,7 @@ package se.kth.iv1350.amazingpos.model;
  *
  * @author 10478ALES
  */
+
 public class ItemDTO {
     private int itemQuantity;
     
