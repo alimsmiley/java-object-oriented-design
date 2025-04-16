@@ -1,14 +1,13 @@
 
 package se.kth.iv1350.amazingpos.controller;
 import se.kth.iv1350.amazingpos.model.Sale;
-//hello there
+import se.kth.iv1350.amazingpos.model.SaleDTO;
 /**
  * This is the applications only controller
  * 
  */
 public class Controller {
     private Sale sale;
-    
     /**
      * Starts a new sale
      * This method should be called first before doing anything else 
@@ -18,4 +17,9 @@ public class Controller {
         
     }
     
+    public SaleDTO addItem(int itemIdentifier, int quantity){
+        SaleDTO currentSale = Sale.registerItem(itemIdentifier, quantity);
+
+        return currentSale;
+    }
 }

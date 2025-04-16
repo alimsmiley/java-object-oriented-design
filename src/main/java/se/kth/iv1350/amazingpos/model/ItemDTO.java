@@ -10,6 +10,18 @@ package se.kth.iv1350.amazingpos.model;
  */
 
 public class ItemDTO {
-    private int itemQuantity;
+    private int itemIdentifier;
+    private String itemDescription;
+    private double price;
+    private String name;
+    private int vatRate;
+
+    public ItemDTO(int itemIdentifier, String itemDescription, double price, String name, int vatRate){
+        this.itemIdentifier = itemIdentifier;
+        this.itemDescription = itemDescription;
+        this.name = name;
+        this.price = price;
+        this.vatRate = vatRate;
+    }
     
 }
