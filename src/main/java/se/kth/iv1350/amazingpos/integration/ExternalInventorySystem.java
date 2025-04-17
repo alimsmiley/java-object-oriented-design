@@ -35,9 +35,7 @@ public class ExternalInventorySystem {
         return item;
     }
 }
-<<<<<<< HEAD
 
-//Vi börjar här
-=======
-//Last thing done
->>>>>>> 2e1f8ec9d6b6631ba69b5efceee365552a208a83
+
+//Vi börjar här 17/4 torsdag
+
