@@ -37,7 +37,6 @@ public class MainTest {
     public void testMain() {
         String[] args = null;
         Main.main(args);
-        
     }
     
 }

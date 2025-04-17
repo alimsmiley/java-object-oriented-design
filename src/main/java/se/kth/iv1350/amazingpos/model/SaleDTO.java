@@ -20,13 +20,39 @@ public class SaleDTO {
     /**
      * Creates and instance of SaleDTO
      */
-    public SaleDTO(){
-
+    public SaleDTO(Sale currentSale, ItemDTO item){
+        this.lastRegisteredItem = item;
+        this.listOfRegisteredItem = currentSale.listOfRegisteredItem;
+        this.runningTotal = currentSale.runningTotal;
+        this.saleTime = currentSale.saleTime;
+        this.vat = currentSale.vat;
     }
 
-    private void checkItemValidity(){
+    public void checkItemValidity(){
         if(lastRegisteredItem == null){
             System.out.println("Item invalid");
         }
     }
+
+    public ItemDTO getLastRegisteredItem() {
+        return lastRegisteredItem;
+    }
+
+    public ShoppingList getShoppingList(){
+        return listOfRegisteredItem;
+    }
+
+    public int getRunningTotal(){
+        return runningTotal;
+    }
+
+    public LocalTime getSaleTime(){
+        return saleTime;
+    }
+
+    public int getTotalVat(){
+        return vat;
+    }
+
+
 }
