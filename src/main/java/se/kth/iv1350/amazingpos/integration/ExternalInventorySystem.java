@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package se.kth.iv1350.amazingpos.integration;
+import se.kth.iv1350.amazingpos.model.ItemDTO;
 
 /**
  *
@@ -16,5 +17,3 @@ public class ExternalInventorySystem {
 
     }
 }
-
-//Vi börjar här

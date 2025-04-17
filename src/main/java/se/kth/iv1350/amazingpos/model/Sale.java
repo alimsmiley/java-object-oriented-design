@@ -4,7 +4,8 @@ import java.util.*;
 
 import java.time.LocalTime;
 
-import se.kth.iv1350.amazingpos.integration.Printer;
+import se.kth.iv1350.amazingpos.integration.*;
+import se.kth.iv1350.amazingpos.model.*;
 
 
 /**
@@ -26,15 +27,16 @@ public class Sale {
      *
      */
     public Sale(){
-        shoppingCart = new LinkedList<Node>();
+        //shoppingCart = new LinkedList<Node>();
         Sale paidSale = new Sale();
         Printer printer = new Printer();
         Receipt receipt = new Receipt(paidSale, printer);
         
     }
     public SaleDTO registerItem(int itemIdentifier, int quantity){
-
-        return 0;
-
+        ItemDTO item = ExternalAccountingSystem.getItem(itemIdentifier);
+        SaleDTO currentSale = new SaleDTO();
+       //currentSale.lastRegisteredItem = item;
+        return currentSale;
     }
 }
