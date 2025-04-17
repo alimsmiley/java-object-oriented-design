@@ -16,3 +16,5 @@ public class ExternalInventorySystem {
 
     }
 }
+
+//Vi börjar här
