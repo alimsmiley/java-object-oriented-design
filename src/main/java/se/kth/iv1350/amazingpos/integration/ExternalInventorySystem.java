@@ -37,5 +37,5 @@ public class ExternalInventorySystem {
 }
 
 
-//Vi börjar här 17/4 torsdag
+//Här Niklas 17/4 torsdag
 
