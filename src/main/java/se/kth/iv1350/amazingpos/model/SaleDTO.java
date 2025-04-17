@@ -22,10 +22,10 @@ public class SaleDTO {
      */
     public SaleDTO(Sale currentSale, ItemDTO item){
         this.lastRegisteredItem = item;
-        this.listOfRegisteredItem = currentSale.listOfRegisteredItem;
-        this.runningTotal = currentSale.runningTotal;
-        this.saleTime = currentSale.saleTime;
-        this.vat = currentSale.vat;
+        this.listOfRegisteredItem = currentSale.getShoppingCart();
+        this.runningTotal = currentSale.getRunningTotal();
+        this.saleTime = currentSale.getSaleTime();
+        this.vat = currentSale.getVat();
     }
 
     public void checkItemValidity(){
