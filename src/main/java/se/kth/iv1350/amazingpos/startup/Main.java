@@ -22,5 +22,6 @@ public class Main {
         RegistryCreator registryCreator = new RegistryCreator();
         Printer printer = new Printer();
     }
-    
+
 }
+//testar nu
