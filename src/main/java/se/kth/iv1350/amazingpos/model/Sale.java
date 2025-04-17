@@ -32,6 +32,13 @@ public class Sale {
         Receipt receipt = new Receipt(paidSale, printer);
         
     }
+
+    /**
+     * Registers an item to be purchased.
+     * @param itemIdentifier The identifier for each item represented as an integer.
+     * @param quantity Number of Items to be registered.
+     * @return An object  containing all indormation about an item.
+     */
     public SaleDTO registerItem(int itemIdentifier, int quantity){
         ItemDTO item = ExternalAccountingSystem.getItem(itemIdentifier);
         SaleDTO currentSale = new SaleDTO(this, item);

@@ -24,4 +24,35 @@ public class ItemDTO {
         this.vatRate = vatRate;
     }
     
+
+    public ItemDTO(ItemDTO placeHolderDTO){
+        this.itemIdentifier = placeHolderDTO.getItemIdentifier();
+        this.itemDescription = placeHolderDTO.getItemDescription();
+        this.price = placeHolderDTO.getPrice();
+        this.name = placeHolderDTO.getName();
+        this.vatRate = placeHolderDTO.getVatRate();
+
+    }
+
+    public int getItemIdentifier(){
+        return itemIdentifier;
+    }
+
+    public String getItemDescription(){
+        return itemDescription;
+    }
+
+    public double getPrice(){
+        return price;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public int getVatRate(){
+        return vatRate;
+    }
+
+
 }

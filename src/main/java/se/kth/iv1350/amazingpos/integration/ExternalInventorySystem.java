@@ -4,18 +4,15 @@
  */
 package se.kth.iv1350.amazingpos.integration;
 import se.kth.iv1350.amazingpos.model.ItemDTO;
+import se.kth.iv1350.amazingpos.placeholders.PlaceholderDatabase;
 
 /**
  *
  * Includes a database of information about all items
  */
 public class ExternalInventorySystem {
-    /**
-     * Creates an instance of the inventory system
-     */
-    ExternalInventorySystem(){
-
-    }
+    
+    
     /**
      * Gets the item information form external inventroy system given the
      * @param itemIdentifier
@@ -30,7 +27,7 @@ public class ExternalInventorySystem {
             return item;
         }
         else{
-            item = new ItemDTO(placeholderDTO.itemIdentifier, placeholderDTO.itemDescription, placeholderDTO.price, placeholderDTO.name, placeholderDTO.vatRate);
+            item = new ItemDTO(placeholderDTO);
         }
         return item;
     }
