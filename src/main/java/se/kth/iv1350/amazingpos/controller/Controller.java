@@ -18,7 +18,7 @@ public class Controller {
     }
     
     public SaleDTO addItem(int itemIdentifier, int quantity){
-        SaleDTO currentSale = Sale.registerItem(itemIdentifier, quantity);
+        SaleDTO currentSale = sale.registerItem(itemIdentifier, quantity);
 
         return currentSale;
     }

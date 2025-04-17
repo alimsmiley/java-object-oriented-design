@@ -37,6 +37,8 @@ public class Sale {
         ItemDTO item = ExternalAccountingSystem.getItem(itemIdentifier);
         SaleDTO currentSale = new SaleDTO();
        //currentSale.lastRegisteredItem = item;
-        return currentSale;
+        return currentSale; 
     }
 }
+
+
