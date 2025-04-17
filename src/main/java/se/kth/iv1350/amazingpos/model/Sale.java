@@ -16,10 +16,9 @@ public class Sale {
     private int runningTotal;
     private LocalTime saleTime;
     private int vat;
-    
     private int finalAmount;
     private Receipt receipt;
-    private Sale paidSale;
+    //private Sale paidSale;     Vad ska denna användas till?
     
             
     /**
@@ -39,6 +38,32 @@ public class Sale {
        //currentSale.lastRegisteredItem = item;
         return currentSale; 
     }
+
+    public ShoppingList getShoppingCart(){
+        return shoppingCart;
+    }
+
+    public int getRunningTotal(){
+        return runningTotal;
+    }
+
+    public LocalTime getSaleTime(){
+        return saleTime;
+    }
+    
+    public int getVat(){
+        return vat;
+    }
+
+    public int getFinalAmount(){
+        return finalAmount;
+    }
+
+    public Receipt getReceipt(){
+        return receipt;
+    }
+
+
 }
 
 
