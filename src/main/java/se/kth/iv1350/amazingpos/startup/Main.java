@@ -1,9 +1,9 @@
 
 package se.kth.iv1350.amazingpos.startup;
 import se.kth.iv1350.amazingpos.controller.Controller;
-import se.kth.iv1350.amazingpos.view.View;
-import se.kth.iv1350.amazingpos.integration.RegistryCreator;
 import se.kth.iv1350.amazingpos.integration.Printer;
+import se.kth.iv1350.amazingpos.integration.RegistryCreator;
+import se.kth.iv1350.amazingpos.view.View;
 
 /**
  * Starts the entire program. Contains main method required to start the application.

@@ -1,11 +1,10 @@
 package se.kth.iv1350.amazingpos.model;
 
-import java.util.*;
-
 import java.time.LocalTime;
 
-import se.kth.iv1350.amazingpos.integration.*;
-import se.kth.iv1350.amazingpos.model.*;
+import se.kth.iv1350.amazingpos.integration.ExternalInventorySystem;
+import se.kth.iv1350.amazingpos.integration.Printer;
+
 
 
 /**
@@ -40,7 +39,7 @@ public class Sale {
      * @return An object  containing all indormation about an item.
      */
     public SaleDTO registerItem(int itemIdentifier, int quantity){
-        ItemDTO item = ExternalAccountingSystem.getItem(itemIdentifier);
+        ItemDTO item = ExternalInventorySystem.lookupItem(itemIdentifier);
         SaleDTO currentSale = new SaleDTO(this, item);
        //currentSale.lastRegisteredItem = item;
         return currentSale; 
