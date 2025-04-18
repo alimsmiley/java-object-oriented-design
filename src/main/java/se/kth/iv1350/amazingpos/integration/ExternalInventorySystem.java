@@ -36,5 +36,5 @@ public class ExternalInventorySystem {
 }
 
 
-//Här Niklas 17/4 torsdag
+
 
