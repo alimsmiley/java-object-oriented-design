@@ -7,7 +7,7 @@ public class PlaceholderDatabase {
     // an array with a bunch of basically item DTOS
    
 
-    public static ItemDTO findItemPlaceholderDatabase(int itemIdentifier){
+    public ItemDTO findItemPlaceholderDatabase(int itemIdentifier){
         ItemDTO[] itemsInDataBase = {
             new ItemDTO(1, "Arla laktosfri mjölk",
              150, "Mjölk", 15), 
