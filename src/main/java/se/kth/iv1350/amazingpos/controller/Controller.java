@@ -16,7 +16,13 @@ public class Controller {
         sale = new Sale();
         
     }
-    
+    /**
+     * This method adds a specified {@link quantity} of an item to the current sale.
+     * 
+     * @param itemIdentifier The number that corresponds to the item added.
+     * @param quantity  The quantity of the item that are to be added.
+     * @return The current sale dto.
+     */
     public SaleDTO addItem(int itemIdentifier, int quantity){
         SaleDTO currentSale = sale.registerItem(itemIdentifier, quantity);
 

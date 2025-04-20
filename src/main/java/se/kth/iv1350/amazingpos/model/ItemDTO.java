@@ -15,7 +15,14 @@ public class ItemDTO {
     private double price;
     private String name;
     private int vatRate;
-
+    /**
+     * Creates a new instance of ItemDTO give
+     * @param itemIdentifier
+     * @param itemDescription
+     * @param price
+     * @param name
+     * @param vatRate
+     */
     public ItemDTO(int itemIdentifier, String itemDescription, double price, String name, int vatRate){
         this.itemIdentifier = itemIdentifier;
         this.itemDescription = itemDescription;

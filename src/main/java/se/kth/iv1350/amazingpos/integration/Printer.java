@@ -6,9 +6,12 @@ package se.kth.iv1350.amazingpos.integration;
 
 /**
  *
- * @author 10478ALES
+ * 
  */
 public class Printer {
+    /**
+     * Creates an instance of printer
+     */
     public Printer (){
         
     }

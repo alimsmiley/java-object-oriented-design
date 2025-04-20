@@ -16,9 +16,9 @@ public class ExternalInventorySystem {
     
     
     /**
-     * Gets the item information form external inventroy system given the
-     * @param itemIdentifier
-     * @return
+     * Gets the item information from an external inventroy system given the {@link itemIdentifier} and returns the item found.
+     * @param itemIdentifier The item identifier.
+     * @return The item that was looked up.
      */
     public static ItemDTO lookupItem(int itemIdentifier){
         ItemDTO item;
