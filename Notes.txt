@@ -1,0 +1,2 @@
+21/4 25:
+Skriv om sale så att getshoppinglist skickar en deep copy istället.
