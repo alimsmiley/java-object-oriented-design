@@ -6,8 +6,9 @@ package se.kth.iv1350.amazingpos.model;
 
 /**
  *
- * @author 10478ALES
+ * Represents a payment made for a single specific sale.
  */
 public class Payment {
-    
+    private int paidAmount;
+    private int change;
 }
