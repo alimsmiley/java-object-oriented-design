@@ -18,7 +18,9 @@ public class SaleDTO {
     private int vat;
 
     /**
-     * Creates and instance of SaleDTO
+     * Creates a new instance of SaleDTO given {@link currentSale} and {@link item}
+     * @param currentSale The current sale
+     * @param item  The item to be added.
      */
     public SaleDTO(Sale currentSale, ItemDTO item){
         this.lastRegisteredItem = item;
