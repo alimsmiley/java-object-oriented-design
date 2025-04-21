@@ -5,9 +5,10 @@
 package se.kth.iv1350.amazingpos.model;
 
 /**
- *
- * @author 10478ALES
+ *  Represents the cash register.
+ * 
  */
 public class CashRegister {
-    
+    private int balance;
+
 }

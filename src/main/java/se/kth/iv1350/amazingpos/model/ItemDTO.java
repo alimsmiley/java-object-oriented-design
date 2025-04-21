@@ -6,7 +6,7 @@ package se.kth.iv1350.amazingpos.model;
 
 /**
  *
- * @author 10478ALES
+ * Represents the item infomation
  */
 
 public class ItemDTO {
@@ -30,8 +30,7 @@ public class ItemDTO {
         this.price = price;
         this.vatRate = vatRate;
     }
-    
-
+    //IDK what this is for
     public ItemDTO(ItemDTO placeHolderDTO){
         this.itemIdentifier = placeHolderDTO.getItemIdentifier();
         this.itemDescription = placeHolderDTO.getItemDescription();
@@ -41,22 +40,42 @@ public class ItemDTO {
 
     }
 
+    /**
+     * Gets the item identifier from this instance of the itemDTO
+     * @return Item identifier
+     */
     public int getItemIdentifier(){
         return itemIdentifier;
     }
 
+    /**
+     * Gets the item Descrption from this instance of the itemDTO
+     * @return Item description
+     */
     public String getItemDescription(){
         return itemDescription;
     }
 
+    /**
+     * Gets the price of the item from this instance of the itemDTO
+     * @return Price of the item
+     */
     public double getPrice(){
         return price;
     }
 
+    /**
+     * Gets the name of the item from this instance of the itemDTO
+     * @return The name of the item
+     */
     public String getName(){
         return name;
     }
 
+    /**
+     * Gets the vat rate for the item from this instance of the itemDTO
+     * @return The item's vat rate
+     */
     public int getVatRate(){
         return vatRate;
     }

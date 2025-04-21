@@ -6,7 +6,7 @@ package se.kth.iv1350.amazingpos.model;
 
 /**
  *
- * @author 10478ALES
+ * Contains information about the discount
  */
 public class DiscountDTO {
     
