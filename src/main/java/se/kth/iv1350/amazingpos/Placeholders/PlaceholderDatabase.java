@@ -1,5 +1,5 @@
 package se.kth.iv1350.amazingpos.placeholders;
-
+//Make sure that placeholders folder has a small p
 import se.kth.iv1350.amazingpos.model.ItemDTO;
 
 
