@@ -40,7 +40,7 @@ public class SaleDTO {
         return lastRegisteredItem;
     }
 
-    public ShoppingList getShoppingList(){
+    public ShoppingList getListOfRegisteredItem(){
         return listOfRegisteredItem;
     }
 
