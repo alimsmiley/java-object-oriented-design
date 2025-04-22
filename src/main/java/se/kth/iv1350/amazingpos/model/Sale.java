@@ -25,7 +25,7 @@ public class Sale {
      *
      */
     public Sale(){
-        //shoppingCart = new LinkedList<Node>();
+        shoppingCart = new ShoppingList();
         Sale paidSale = new Sale();
         Printer printer = new Printer();
         Receipt receipt = new Receipt(paidSale, printer);
@@ -39,9 +39,17 @@ public class Sale {
      * @return An object  containing all indormation about an item.
      */
     public SaleDTO registerItem(int itemIdentifier, int quantity){
+
+
         ItemDTO item = ExternalInventorySystem.lookupItem(itemIdentifier);
         SaleDTO currentSale = new SaleDTO(this, item);
-       //currentSale.lastRegisteredItem = item;
+
+        if(item != null){
+            shoppingCart.addToShoppingList(item, quantity);
+
+        }
+
+       
         return currentSale; 
     }
 
