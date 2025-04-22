@@ -13,14 +13,15 @@ import se.kth.iv1350.amazingpos.model.ItemDTO;
 public class ExternalInventorySystemTest {
     private int invalidItemIdentifier = 3;
     private int validItemIdentifier = 2;
+    ExternalInventorySystem exInventory;
 
     @BeforeAll
-    public static void setUpClass() {
-        ExternalInventorySystem exInventory = new ExternalInventorySystem ();
+    public  void setUpClass() {
+        exInventory = new ExternalInventorySystem();    
     }
     
     @AfterAll
-    public static void tearDownClass() {
+    public  void tearDownClass() {
         
     }
     
@@ -35,7 +36,7 @@ public class ExternalInventorySystemTest {
 
     @Test
     void  testItemDTOIsReturned(){
-        ItemDTO item = ExternalInventorySystem.lookupItem(2);
+        ItemDTO item = exInventory.lookupItem(2);
         assertTrue(item instanceof ItemDTO);
 
     }
@@ -43,7 +44,7 @@ public class ExternalInventorySystemTest {
     @Test
     void correctItemNameReturnedForASpecificItemIdentifier(){
         String expectedResult = "Mjölk";
-        ItemDTO itemDTO = ExternalInventorySystem.lookupItem(1);
+        ItemDTO itemDTO = exInventory.lookupItem(1);
         assertTrue(itemDTO.getName().equals(expectedResult), "Wrong name returned for the specified item!");
 
     }
@@ -52,14 +53,14 @@ public class ExternalInventorySystemTest {
 
     @Test
     void testLookupInvalidItemIdentifier() {  
-        ItemDTO itemDTO = ExternalInventorySystem.lookupItem(5);
+        ItemDTO itemDTO = exInventory.lookupItem(5);
         ItemDTO expectedResult = null;
         assertEquals(itemDTO, expectedResult, "Valid itemidentifier not found!");
     }
 
     @Test
     void testLookupValidItemIdentifier() {
-        ItemDTO itemDTO = ExternalInventorySystem.lookupItem(2);
+        ItemDTO itemDTO = exInventory.lookupItem(2);
         int expectedResult = 2;
         assertEquals(itemDTO.getItemIdentifier(), expectedResult, "Valid itemidentifier not found!");
     }
