@@ -11,9 +11,19 @@ package se.kth.iv1350.amazingpos.model;
 public class Payment {
     private double paidAmount;
     private double change;
-
+    /**
+     * Creates an instance of payment given a certain {@link paidAmount}.
+     * @param paidAmount    The amount paid.
+     */
     public Payment(double paidAmount){
         this.paidAmount = paidAmount;
+    }
+    /**
+     * Calculates the change given the {@link paidSale}.
+     * @param paidSale  The current sale that is being paid.
+     */
+    void calculateChange(Sale paidSale){
+        this.change = this.paidAmount - paidSale.getRunningTotal();
     }
 
     double getPaidAmount(){
@@ -24,7 +34,5 @@ public class Payment {
         return this.change;
     }
 
-    void calculateChange(Sale paidSale){
-        this.change = this.paidAmount - paidSale.getRunningTotal();
-    }
+    
 }
