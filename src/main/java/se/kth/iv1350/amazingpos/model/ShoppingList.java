@@ -9,7 +9,19 @@ public class ShoppingList {
     private ArrayList<ItemInCart> shoppingList;
 
     public ShoppingList(){
-        this.shoppingList = new ArrayList<ItemInCart>();
+        this.shoppingList = new ArrayList<>();
+    }
+
+    public ShoppingList(ShoppingList original){
+        this.shoppingList = new ArrayList<>();
+        for(ItemInCart item: original.shoppingList){
+            this.shoppingList.add(new ItemInCart(item.getItemDTO(), item.getQuantity()));
+        }
+    }
+
+    public ArrayList<ItemInCart> getArrayList(){
+        return this.shoppingList; 
+
     }
 
     public void addToShoppingList(ItemDTO item, int quantity){

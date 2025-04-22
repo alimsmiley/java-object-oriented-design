@@ -49,7 +49,7 @@ public class SaleDTO {
      * @return  List of registered items.
      */
     public ShoppingList getListOfRegisteredItem(){
-        return listOfRegisteredItem;
+        return new ShoppingList(this.listOfRegisteredItem);
     }
     /**
      * Gets the current running total.
