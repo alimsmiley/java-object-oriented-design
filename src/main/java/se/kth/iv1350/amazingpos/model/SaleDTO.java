@@ -29,29 +29,46 @@ public class SaleDTO {
         this.saleTime = currentSale.getSaleTime();
         this.vat = currentSale.getVat();
     }
-
+    /**
+     * Checks if the item is valid or not.
+     */
     public void checkItemValidity(){
         if(lastRegisteredItem == null){
             System.out.println("Item invalid");
         }
     }
-
+    /**
+     * Gets the last registered item.
+     * @return  The last registered item
+     */
     public ItemDTO getLastRegisteredItem() {
         return lastRegisteredItem;
     }
-
+    /**
+     * Gets the list of all registered items
+     * @return  List of registered items.
+     */
     public ShoppingList getListOfRegisteredItem(){
         return listOfRegisteredItem;
     }
-
+    /**
+     * Gets the current running total.
+     * @return  Running total.
+     */
     public int getRunningTotal(){
         return runningTotal;
     }
-
+    /**
+     * Gets the time of sale.
+     * @return  Sale time.
+     */
     public LocalTime getSaleTime(){
         return saleTime;
     }
-
+    /**
+     * Gets the total vat ammount. 
+     * @return  Total ammount of vat.
+     */
     public int getTotalVat(){
         return vat;
     }
