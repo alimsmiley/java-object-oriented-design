@@ -7,23 +7,35 @@ import java.util.*;
  */
 public class ShoppingList {
     private ArrayList<ItemInCart> shoppingList;
-
+    /**
+     * Creates an instance of the shopping list
+     */
     public ShoppingList(){
         this.shoppingList = new ArrayList<>();
     }
-
+    /**
+     * Overloaded constructor for shopping list given {@link original} to create a copy
+     * @param original The original Shopping list.
+     */
     public ShoppingList(ShoppingList original){
         this.shoppingList = new ArrayList<>();
         for(ItemInCart item: original.shoppingList){
             this.shoppingList.add(new ItemInCart(item.getItemDTO(), item.getQuantity()));
         }
     }
-
+    /**
+     * Gets the current shopping list.
+     * @return  The current shopping list.
+     */
     public ArrayList<ItemInCart> getArrayList(){
         return this.shoppingList; 
 
     }
-
+    /**
+     * Adds an {@link item} to the shopping list with a given {@link quantity}.
+     * @param item  The item to be added.
+     * @param quantity  The quantity of the item.
+     */
     public void addToShoppingList(ItemDTO item, int quantity){
         int positionInShoppingList = searchForItem(item);
         if(positionInShoppingList == -1){
@@ -32,7 +44,11 @@ public class ShoppingList {
         }
         shoppingList.get(positionInShoppingList).addQuantity(quantity);
     }
-
+    /**
+     * Searches to see if an {@link item} exsists in the list already.
+     * @param item  The item that is searched for.
+     * @return  The possition of the found item.
+     */
     private int searchForItem(ItemDTO item){
         int possition = -1;
         int searchID = item.getItemIdentifier();
