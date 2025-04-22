@@ -2,8 +2,9 @@ package se.kth.iv1350.amazingpos.model;
 
 import java.time.LocalTime;
 
-import se.kth.iv1350.amazingpos.integration.ExternalInventorySystem;
-import se.kth.iv1350.amazingpos.integration.Printer;
+import se.kth.iv1350.amazingpos.integration.*;
+
+
 
 
 
@@ -17,6 +18,8 @@ public class Sale {
     private int vat;
     private int finalAmount;
     private Receipt receipt;
+    private RegistryCreator externalSystems;
+    private Printer printer;
     //private Sale paidSale;     Vad ska denna användas till?
     
             
@@ -24,12 +27,12 @@ public class Sale {
      * Creates a new instance of sale 
      *
      */
-    public Sale(){
+    public Sale(RegistryCreator exSystems, Printer printer){
         shoppingCart = new ShoppingList();
-        Sale paidSale = new Sale();
-        Printer printer = new Printer();
-        Receipt receipt = new Receipt(paidSale, printer);
-        
+        this.externalSystems = exSystems;
+        this.printer = printer;
+        this.saleTime = LocalTime.now();
+
     }
 
     /**
@@ -41,15 +44,13 @@ public class Sale {
     public SaleDTO registerItem(int itemIdentifier, int quantity){
 
 
-        ItemDTO item = ExternalInventorySystem.lookupItem(itemIdentifier);
+        ItemDTO item = externalSystems.getExternalInventorySystem().lookupItem(itemIdentifier);
         SaleDTO currentSale = new SaleDTO(this, item);
 
         if(item != null){
             shoppingCart.addToShoppingList(item, quantity);
 
         }
-
-       
         return currentSale; 
     }
 

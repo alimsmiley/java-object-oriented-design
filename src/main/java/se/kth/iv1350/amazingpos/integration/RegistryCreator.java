@@ -9,8 +9,27 @@ package se.kth.iv1350.amazingpos.integration;
  */
 public class RegistryCreator {
 
-    DiscountDataBase discountDataBase = new DiscountDataBase();
-    ExternalAccountingSystem externalAccountingSystem = new ExternalAccountingSystem();
-    ExternalInventorySystem externalInventorySystem = new ExternalInventorySystem();
-    
+    private DiscountDataBase discountDataBase;
+    private ExternalAccountingSystem externalAccountingSystem;
+    private ExternalInventorySystem externalInventorySystem;
+
+    public RegistryCreator(){
+
+     discountDataBase = new DiscountDataBase();
+     externalAccountingSystem = new ExternalAccountingSystem();
+     externalInventorySystem = new ExternalInventorySystem();
+
+    } 
+
+    public DiscountDataBase getDiscountDataBase() {
+        return discountDataBase;
+    }
+
+    public ExternalAccountingSystem getExternalAccountingSystem() {
+        return externalAccountingSystem;
+    }
+
+    public ExternalInventorySystem getExternalInventorySystem() {
+        return externalInventorySystem;
+    }
 }

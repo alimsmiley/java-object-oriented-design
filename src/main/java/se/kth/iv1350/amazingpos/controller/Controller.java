@@ -1,19 +1,31 @@
 
 package se.kth.iv1350.amazingpos.controller;
-import se.kth.iv1350.amazingpos.model.Sale;
-import se.kth.iv1350.amazingpos.model.SaleDTO;
+import se.kth.iv1350.amazingpos.integration.*;
+import se.kth.iv1350.amazingpos.model.*;
+
 /**
  * This is the applications only controller
  * 
  */
 public class Controller {
     private Sale sale;
+    private RegistryCreator externalSystems;
+   
+    private Printer printer;
+
+    public Controller(RegistryCreator creator, Printer printer){
+       this.externalSystems = creator;
+       this.printer = printer;
+    }
+
+
+
     /**
      * Starts a new sale
      * This method should be called first before doing anything else 
      */
     public void startSale(){
-        sale = new Sale();
+        sale = new Sale(externalSystems, printer);
         
     }
     /**
@@ -24,8 +36,6 @@ public class Controller {
      * @return The current sale dto.
      */
     public SaleDTO addItem(int itemIdentifier, int quantity){
-        SaleDTO currentSale = sale.registerItem(itemIdentifier, quantity);
-
-        return currentSale;
+        return sale.registerItem(itemIdentifier, quantity);
     }
 } //push igen

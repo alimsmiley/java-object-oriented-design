@@ -13,14 +13,12 @@ import se.kth.iv1350.amazingpos.placeholders.PlaceholderDatabase;
  */
 public class ExternalInventorySystem {
     
-    
-    
     /**
      * Gets the item information from an external inventroy system given the {@link itemIdentifier} and returns the item found.
      * @param itemIdentifier The item identifier.
      * @return The item that was looked up.
      */
-    public static ItemDTO lookupItem(int itemIdentifier){
+    public ItemDTO lookupItem(int itemIdentifier){
         ItemDTO item;
         // sends a request to the external database that either doesnt return anything usefull or returns the data so we can create a ItemDTO
         ItemDTO placeholderDTO = PlaceholderDatabase.findItemPlaceholderDatabase(itemIdentifier);
