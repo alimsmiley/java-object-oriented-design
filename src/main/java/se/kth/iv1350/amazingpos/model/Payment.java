@@ -9,6 +9,15 @@ package se.kth.iv1350.amazingpos.model;
  * Represents a payment made for a single specific sale.
  */
 public class Payment {
-    private int paidAmount;
-    private int change;
+    private double paidAmount;
+    private double change;
+
+    public Payment(double paidAmount){
+        this.paidAmount = paidAmount;
+    }
+
+    double getPaidAmount(){
+        return this.paidAmount;
+    }
+
 }

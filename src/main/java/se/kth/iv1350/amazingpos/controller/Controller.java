@@ -28,4 +28,8 @@ public class Controller {
 
         return currentSale;
     }
+
+    public double pay(int paidAmount){
+        
+    }
 } //push igen
