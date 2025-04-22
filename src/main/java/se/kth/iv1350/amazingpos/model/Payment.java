@@ -20,4 +20,12 @@ public class Payment {
         return this.paidAmount;
     }
 
+    double getChange(){
+        return this.change;
+    }
+
+    void calculateTotalAmount(Sale paidSale){
+        
+        this.change = this.paidAmount - paidSale.getRunningTotal();
+    }
 }
