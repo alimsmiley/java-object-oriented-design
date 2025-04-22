@@ -10,13 +10,16 @@ public class Receipt {
     public Printer printer;
     
     /**
-     * Creates a new receipt.  
-     * @param paidSale 
-     * @param printer 
+     * Creates a new receipt given the {@link paidSale} and the {@link printer}.  
+     * @param paidSale The sale that is paid.
+     * @param printer   The printer to print on.
      */
     public Receipt(Sale paidSale, Printer printer){
         this.paidSale = paidSale;
         this.printer = printer;
     }
     
+    public void printReciept(){
+        
+    }
 }
