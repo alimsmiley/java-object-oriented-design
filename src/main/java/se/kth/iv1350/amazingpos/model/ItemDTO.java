@@ -30,7 +30,10 @@ public class ItemDTO {
         this.price = price;
         this.vatRate = vatRate;
     }
-    //IDK what this is for
+    /**
+     * Overloaded constructor with a {@link placeHolderDTO} as argument.
+     * @param placeHolderDTO The itemdto used to create a new itemDTO.
+     */
     public ItemDTO(ItemDTO placeHolderDTO){
         this.itemIdentifier = placeHolderDTO.getItemIdentifier();
         this.itemDescription = placeHolderDTO.getItemDescription();
