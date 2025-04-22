@@ -1,7 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: se.kth.iv1350.amazingpos.startup.MainTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.052 s <<< FAILURE! - in se.kth.iv1350.amazingpos.startup.MainTest
-testMain  Time elapsed: 0.032 s  <<< ERROR!
-java.lang.StackOverflowError
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in se.kth.iv1350.amazingpos.startup.MainTest

@@ -4,8 +4,8 @@ package se.kth.iv1350.amazingpos.model;
 import java.util.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
+//import org.junit.jupiter.api.AfterAll;
+//import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -27,13 +27,14 @@ public class ShoppingListTest {
     public void setUpClass(){
         shoppingList = new ShoppingList();
     }
-        */
+        
 
     @AfterAll
     public static void tearDownClass() {
         
         
     }
+    */
 
     @BeforeEach
     public  void setUp() {
