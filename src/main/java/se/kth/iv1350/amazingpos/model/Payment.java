@@ -24,8 +24,7 @@ public class Payment {
         return this.change;
     }
 
-    void calculateTotalAmount(Sale paidSale){
-        
+    void calculateChange(Sale paidSale){
         this.change = this.paidAmount - paidSale.getRunningTotal();
     }
 }

@@ -45,6 +45,18 @@ public class Sale {
         return currentSale; 
     }
 
+    /**
+     * Represents the transactions of {@link payment}.
+     * @param payment   The payment.
+     * @return  The change.
+     */
+    public double pay(Payment payment){
+        payment.calculateChange(this);
+        double change = payment.getChange();
+        return change;
+    }
+
+
     public ShoppingList getShoppingCart(){
         return shoppingCart;
     }
@@ -68,17 +80,7 @@ public class Sale {
     public Receipt getReceipt(){
         return receipt;
     }
-    
-    /**
-     * Represents the transactions of {@link payment}.
-     * @param payment   The payment.
-     * @return  The change.
-     */
-    public double pay(Payment payment){
-        payment.calculateTotalAmount(this);
-        double change = payment.getChange();
-        return change;
-    }
+
 
 }
 

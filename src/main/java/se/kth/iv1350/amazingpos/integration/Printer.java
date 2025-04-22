@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package se.kth.iv1350.amazingpos.integration;
+import se.kth.iv1350.amazingpos.model.Receipt;
 
 /**
  *
@@ -14,5 +15,9 @@ public class Printer {
      */
     public Printer (){
         
+    }
+    
+    public void printReciept(Reciept receipt){
+
     }
 }
