@@ -14,7 +14,7 @@ public class ItemDTO {
     private String itemDescription;
     private double price;
     private String name;
-    private int vatRate;
+    private double vatRate;
     /**
      * Creates a new instance of ItemDTO give
      * @param itemIdentifier
@@ -23,7 +23,7 @@ public class ItemDTO {
      * @param name
      * @param vatRate
      */
-    public ItemDTO(int itemIdentifier, String itemDescription, double price, String name, int vatRate){
+    public ItemDTO(int itemIdentifier, String itemDescription, double price, String name, double vatRate){
         this.itemIdentifier = itemIdentifier;
         this.itemDescription = itemDescription;
         this.name = name;
@@ -79,7 +79,7 @@ public class ItemDTO {
      * Gets the vat rate for the item from this instance of the itemDTO
      * @return The item's vat rate
      */
-    public int getVatRate(){
+    public double getVatRate(){
         return vatRate;
     }
 

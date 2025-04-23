@@ -10,9 +10,9 @@ public class PlaceholderDatabase {
     public static ItemDTO findItemPlaceholderDatabase(int itemIdentifier){
         ItemDTO[] itemsInDataBase = {
             new ItemDTO(1, "Arla laktosfri mjölk",
-             150, "Mjölk", 15), 
+             150, "Mjölk", 0.15), 
             new ItemDTO(2, "Extra virgin olive oil",
-             200, "Olive oil", 20) };
+             200, "Olive oil", 0.20) };
        
            
         ItemDTO searchedItem = null;

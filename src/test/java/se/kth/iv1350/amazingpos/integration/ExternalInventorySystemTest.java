@@ -1,10 +1,11 @@
 package se.kth.iv1350.amazingpos.integration;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import org.junit.jupiter.api.BeforeAll;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,20 +14,25 @@ import se.kth.iv1350.amazingpos.model.ItemDTO;
 public class ExternalInventorySystemTest {
     private int invalidItemIdentifier = 3;
     private int validItemIdentifier = 2;
-    ExternalInventorySystem exInventory;
+    static ExternalInventorySystem exInventory;
 
     @BeforeAll
-    public  void setUpClass() {
-        exInventory = new ExternalInventorySystem();    
+    static void setUpClass(){
+        exInventory = new ExternalInventorySystem(); 
     }
+
+
     
     @AfterAll
-    public  void tearDownClass() {
+    static void tearDownClass() {
+        exInventory = null;
+        
         
     }
     
     @BeforeEach
-    public void setUp() {
+    void setUp() {
+        
     
     }
     

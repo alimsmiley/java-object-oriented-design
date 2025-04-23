@@ -13,9 +13,9 @@ import java.time.LocalTime;
 public class SaleDTO {
     private ItemDTO lastRegisteredItem;
     private ShoppingList listOfRegisteredItem;
-    private int runningTotal;
+    private double runningTotal;
     private LocalTime saleTime;
-    private int vat;
+    private double vat;
 
     /**
      * Creates a new instance of SaleDTO given {@link currentSale} and {@link item}
@@ -34,6 +34,7 @@ public class SaleDTO {
      */
     public void checkItemValidity(){
         if(lastRegisteredItem == null){
+            //should throw an exception here!
             System.out.println("Item invalid");
         }
     }
@@ -55,7 +56,7 @@ public class SaleDTO {
      * Gets the current running total.
      * @return  Running total.
      */
-    public int getRunningTotal(){
+    public double getRunningTotal(){
         return runningTotal;
     }
     /**
@@ -69,7 +70,7 @@ public class SaleDTO {
      * Gets the total vat ammount. 
      * @return  Total ammount of vat.
      */
-    public int getTotalVat(){
+    public double getTotalVat(){
         return vat;
     }
 

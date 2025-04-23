@@ -10,7 +10,6 @@ import se.kth.iv1350.amazingpos.model.*;
 public class Controller {
     private Sale sale;
     private RegistryCreator externalSystems;
-   
     private Printer printer;
 
     public Controller(RegistryCreator creator, Printer printer){
@@ -36,6 +35,10 @@ public class Controller {
      * @return The current sale dto.
      */
     public SaleDTO addItem(int itemIdentifier, int quantity){
-        return sale.registerItem(itemIdentifier, quantity);
+        SaleDTO currentSale = sale.registerItem(itemIdentifier, quantity);
+        currentSale.checkItemValidity(); //should throw an exception if invalid!
+           
+        return currentSale;
+        
     }
-} //push igen
+} 

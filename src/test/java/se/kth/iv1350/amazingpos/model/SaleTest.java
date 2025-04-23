@@ -23,6 +23,7 @@ public class SaleTest {
     private int invalidItemIdentifier = 150;
     private int quantity = 2;
     
+    
 
 
     
@@ -75,6 +76,23 @@ public class SaleTest {
         int result = testSale.getShoppingCart().getShoppingList().size();
 
         assertEquals(result, expectedResult, "Shopinglist has wrong size");  
+    }
+
+    @Test
+    public void testIfVatIsUpdated(){
+        testSale.registerItem(validItemIdentifier, quantity); 
+        double result = testSale.getVat();
+        double expectedResult = 45;
+        assertEquals(expectedResult, result, "Vat rate is not updated correctly!");
+
+    }
+
+    @Test
+    public void testIfRunningTotalIsUpdated(){
+        testSale.registerItem(validItemIdentifier, quantity); 
+        double result = testSale.getRunningTotal();
+        double expectedResult = 345;
+        assertEquals(expectedResult, result, "Running total is not updated correctly!");
     }
 
     
