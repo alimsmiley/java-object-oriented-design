@@ -13,10 +13,10 @@ import se.kth.iv1350.amazingpos.integration.*;
  */
 public class Sale {
     private ShoppingList shoppingCart;
-    private int runningTotal;
+    private double runningTotal;
     private LocalTime saleTime;
-    private int vat;
-    private int finalAmount;
+    private double vat;
+    private double finalAmount;
     private Receipt receipt;
     private RegistryCreator externalSystems;
     private Printer printer;
@@ -28,10 +28,13 @@ public class Sale {
      *
      */
     public Sale(RegistryCreator exSystems, Printer printer){
-        shoppingCart = new ShoppingList();
+        this.shoppingCart = new ShoppingList();
         this.externalSystems = exSystems;
         this.printer = printer;
         this.saleTime = LocalTime.now();
+        this.vat = 0;
+        this.finalAmount = 0;
+        this.runningTotal = 0;
 
     }
 
@@ -48,17 +51,52 @@ public class Sale {
         SaleDTO currentSale = new SaleDTO(this, item);
 
         if(item != null){
-            shoppingCart.addToShoppingList(item, quantity);
-
+            updateShoppingCart(item, quantity);
+            updateRunningTotal(item, quantity);
         }
         return currentSale; 
+    }
+    /**
+     * Adds a specified quantity of an item to the ShoppingCart.
+     * @param item Item to be added to the ShoppingCart.
+     * @param quantity 
+     */
+    private void updateShoppingCart(ItemDTO item, int quantity){
+        shoppingCart.addToShoppingList(item, quantity);
+    }
+    /**
+     * Calculates and updates the RunningTotal of the Sale.
+     * @param item Item to be bought
+     * @param quantity Quantity of the item to be bought
+     */
+    private void updateRunningTotal(ItemDTO item, int quantity){
+
+        double vatToPayItem = updateVat(item, quantity);
+        double totalItemPrice = item.getPrice()*quantity + vatToPayItem;
+        
+        runningTotal += totalItemPrice;
+    }
+    
+
+    /**
+     * Calculates and updates the total vat to be paid for the sale
+     * and for each item.
+     * @param item Item for which the vat is to be calculated
+     * @param quantity Quantity of the item
+     * @return Returns the amount of vat to be paid for an item 
+     * multiplied with the quantity. 
+     */
+    private double updateVat(ItemDTO item, int quantity){
+        double vatToPayForItem = item.getPrice()*quantity*item.getVatRate();
+        vat += vatToPayForItem;
+        return vatToPayForItem;
     }
 
     public ShoppingList getShoppingCart(){
         return shoppingCart;
     }
 
-    public int getRunningTotal(){
+    public double getRunningTotal(){
         return runningTotal;
     }
 
@@ -66,18 +104,17 @@ public class Sale {
         return saleTime;
     }
     
-    public int getVat(){
+    public double getVat(){
         return vat;
     }
 
-    public int getFinalAmount(){
+    public double getFinalAmount(){
         return finalAmount;
     }
 
     public Receipt getReceipt(){
         return receipt;
     }
-
 
 }
 

@@ -75,9 +75,9 @@ public class SaleTest {
         int result = testSale.getShoppingCart().getShoppingList().size();
 
         assertEquals(result, expectedResult, "Shopinglist has wrong size");  
-        
- 
     }
+
+    
 
 
 
