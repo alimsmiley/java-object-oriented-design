@@ -22,6 +22,9 @@ public class SaleTest {
     private int validItemIdentifier = 1;
     private int invalidItemIdentifier = 150;
     private int quantity = 2;
+
+    private int validCustomerID = 123;
+    private int invalidCustomerID = 111;
     
     
 
@@ -32,6 +35,8 @@ public class SaleTest {
         exSystems = new RegistryCreator();
         printer = new Printer();
         testSale = new Sale(exSystems, printer);
+        
+
     }
      
     @AfterEach
@@ -95,8 +100,29 @@ public class SaleTest {
         assertEquals(expectedResult, result, "Running total is not updated correctly!");
     }
 
-    
 
+
+    @Test
+    public void testEligibleDiscount(){
+        testSale.registerItem(validItemIdentifier, quantity); 
+        SaleDTO currentSale =  testSale.checkForDiscount(validCustomerID);
+        double result = currentSale.getRunningTotal();
+
+        double expectedResult =  345 - 345*0.15;
+        assertEquals(result, expectedResult, "Customer eligible for discount didnt get discount!");        
+
+    }
+
+    @Test
+    public void testNotEligibleDiscount(){
+        testSale.registerItem(validItemIdentifier, quantity); 
+        SaleDTO currentSale =  testSale.checkForDiscount(invalidCustomerID);
+        double result = currentSale.getRunningTotal();
+
+        double expectedResult =  345;
+        assertEquals(result, expectedResult, "Customer not eligible for discount misstakenly got discount!"); 
+
+    }
 
 
 
