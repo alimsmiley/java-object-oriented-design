@@ -3,6 +3,7 @@ package se.kth.iv1350.amazingpos.model;
 import java.time.LocalTime;
 
 import se.kth.iv1350.amazingpos.integration.*;
+import se.kth.iv1350.amazingpos.integration.*;
 
 
 
@@ -57,17 +58,29 @@ public class Sale {
         return currentSale; 
     }
 
-    public SaleDTO checkForDiscount(int customerID){
+    public SaleDTO checkForDiscount(int customerID){ 
         SaleDTO currentSale = new SaleDTO(this);
-        DiscountDTO totalDiscount = searchForDiscount(currentSale, customerID);
+        DiscountDTO totalDiscount = externalSystems.getDiscountDataBase().searchForDiscount(currentSale, customerID);
         applyDiscount(totalDiscount);
-        SaleDTO updatedSale = new SaleDTO(this);
+        SaleDTO updatedSale = new SaleDTO(this); 
+
+        return updatedSale;
 
     }
 
 
     private void applyDiscount(DiscountDTO totalDiscount){
+        double appliedDiscount = calculateDiscount(totalDiscount);
+        
+        double finalPriceAfterDiscount = this.runningTotal - this.runningTotal*appliedDiscount;
+        this.runningTotal = finalPriceAfterDiscount;
 
+    }
+
+    private double calculateDiscount(DiscountDTO totalDiscount){
+        double calculatedDiscount = totalDiscount.getItemDiscount() + totalDiscount.getCustomerDiscount() + totalDiscount.getTotalCostDiscount();
+
+        return calculatedDiscount;
     }
 
     /**

@@ -5,6 +5,7 @@
 package se.kth.iv1350.amazingpos.integration;
 
 import se.kth.iv1350.amazingpos.model.*;
+import se.kth.iv1350.amazingpos.placeholders.PlaceholderDatabase;
 
 /**
  *
@@ -20,12 +21,13 @@ public class DiscountDataBase {
 
 
     public DiscountDTO searchForDiscount(SaleDTO currentSale, int customerID){
-        DiscountDTO totalDiscount = new DiscountDTO();
+        DiscountDTO totalDiscount;
+        // sends a request to the external database that either doesnt return anything usefull or returns the data so we can create a ItemDTO
+        DiscountDTO placeholderDiscountDTO = PlaceholderDatabase.findDiscountPlaceHolderDatabase(currentSale, customerID);
+       
+        totalDiscount = new DiscountDTO(placeholderDiscountDTO);
+       
         return totalDiscount;
 
     }
-
-
-
-
 }

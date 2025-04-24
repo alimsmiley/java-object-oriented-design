@@ -1,6 +1,7 @@
 package se.kth.iv1350.amazingpos.placeholders;
 //Make sure that placeholders folder has a small p
-import se.kth.iv1350.amazingpos.model.ItemDTO;
+import se.kth.iv1350.amazingpos.model.*;
+
 
 
 public class PlaceholderDatabase {
@@ -22,5 +23,17 @@ public class PlaceholderDatabase {
             }
         }
         return searchedItem;
+    }
+
+
+    public static DiscountDTO findDiscountPlaceHolderDatabase(SaleDTO currentSale, int customerID){
+        DiscountDTO[] discounts = {new DiscountDTO(0.10, 0, 0.05),
+             new DiscountDTO(0, 0, 0)};
+        
+        if(customerID == 123){
+            return discounts[0];
+        }
+        return discounts[1];
+       
     }
 }
