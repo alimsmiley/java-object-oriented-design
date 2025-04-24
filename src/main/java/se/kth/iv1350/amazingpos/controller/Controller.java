@@ -53,4 +53,16 @@ public class Controller {
         currentSale.checkItemValidity(); //should throw an exception if invalid!
         return currentSale;  
     }
+
+    public SaleDTO signalDiscount(int customerID){
+        SaleDTO currentSale = sale.checkForDiscount(customerID);
+
+        return currentSale;
+    }
+
+
+
+
+
+
 } 

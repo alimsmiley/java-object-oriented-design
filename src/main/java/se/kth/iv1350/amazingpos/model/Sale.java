@@ -56,6 +56,20 @@ public class Sale {
         }
         return currentSale; 
     }
+
+    public SaleDTO checkForDiscount(int customerID){
+        SaleDTO currentSale = new SaleDTO(this);
+        DiscountDTO totalDiscount = searchForDiscount(currentSale, customerID);
+        applyDiscount(totalDiscount);
+        SaleDTO updatedSale = new SaleDTO(this);
+
+    }
+
+
+    private void applyDiscount(DiscountDTO totalDiscount){
+
+    }
+
     /**
      * Adds a specified quantity of an item to the ShoppingCart.
      * @param item Item to be added to the ShoppingCart.

@@ -29,6 +29,14 @@ public class SaleDTO {
         this.saleTime = currentSale.getSaleTime();
         this.vat = currentSale.getVat();
     }
+
+
+    public SaleDTO(Sale currentSale){
+        this.listOfRegisteredItem = currentSale.getShoppingCart();
+        this.runningTotal = currentSale.getRunningTotal();
+        this.saleTime = currentSale.getSaleTime();
+        this.vat = currentSale.getVat();
+    }
     /**
      * Checks if the item is valid or not.
      */

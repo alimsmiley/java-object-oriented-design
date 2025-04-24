@@ -4,6 +4,8 @@
  */
 package se.kth.iv1350.amazingpos.integration;
 
+import se.kth.iv1350.amazingpos.model.*;
+
 /**
  *
  * Includes database for all discount types
@@ -15,4 +17,15 @@ public class DiscountDataBase {
     DiscountDataBase(){
 
     }
+
+
+    public DiscountDTO searchForDiscount(SaleDTO currentSale, int customerID){
+        DiscountDTO totalDiscount = new DiscountDTO();
+        return totalDiscount;
+
+    }
+
+
+
+
 }
