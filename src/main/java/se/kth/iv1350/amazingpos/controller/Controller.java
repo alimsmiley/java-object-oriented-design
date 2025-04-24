@@ -54,10 +54,27 @@ public class Controller {
         return currentSale;  
     }
 
+    /**
+     * Sends a request to the program to check if the customer is eligible for discounts.
+     * @param customerID unique int assigned to customer for identification
+     * @return Returns a SaleDTO with runningTotal updated with the discount if the customer is eligible
+     *         if not eligible, the runningTotal remains unchanged.
+     */
     public SaleDTO signalDiscount(int customerID){
         SaleDTO currentSale = sale.checkForDiscount(customerID);
 
         return currentSale;
+    }
+
+    /**
+     * fetches the final amount that is to be paid by the customer
+     * @return the final amount to be paid
+     */
+    public double concludeSale(){
+        double finalAmount = sale.endSale();
+
+        return finalAmount;
+
     }
 
 

@@ -3,8 +3,8 @@ ooooooooooooooooooooooooooooooooo Datum: 21/4 oooooooooooooooooooooooooooooooooo
 Skriv om sale så att getListOfRegisteredItem skickar en deep copy istället.
 
 
-ooooooooooooooooooooooooooooooooo Datum: 22/4 oooooooooooooooooooooooooooooooooooooooo
 
-fixa så att runningtotal och vat uppdateras
+ooooooooooooooooooooooooooooooooo Datum: 24/4 ooooooooooooooooooooooooooooooooooooooooooooo
 
-ooooooooooooooooooooooooooooooooo Datum: ooooooooooooooooooooooooooooooooooooooooooooo
+Kvar att göra: 
+1. 

@@ -36,13 +36,24 @@ public class DiscountDataBaseTest {
 
     @Test
     void testDiscountDTOReturned() {
-        DiscountDTO currentDiscount = DiscountDataBase.searchForDiscount(currentSale, validCustomerID);
+        DiscountDTO currentDiscount = externalSystems.getDiscountDataBase().
+                                    searchForDiscount(currentSale, validCustomerID);
 
-        //assertTrue(item instanceof ItemDTO);
+        assertTrue(currentDiscount instanceof DiscountDTO, "Instance DiscountDTO not returned");
 
     }
     @Test
-    void testSearchForDiscount() {
+    void testNotEligibleForDiscount() {
+        DiscountDTO currentDiscount = externalSystems.getDiscountDataBase().
+                                    searchForDiscount(currentSale, invalidCustomerID);
+        boolean result = false;
+        if(currentDiscount.getCustomerDiscount() == 0 
+                && currentDiscount.getItemDiscount() ==0
+                && currentDiscount.getTotalCostDiscount() == 0){
+            result = true;
+        }
 
+        assertTrue(result, "Discount applied even if not eligible");
+        
     }
 } 

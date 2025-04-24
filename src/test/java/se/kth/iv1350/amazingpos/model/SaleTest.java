@@ -31,7 +31,7 @@ public class SaleTest {
 
     
     @BeforeEach 
-    public void setUp(){
+    void setUp(){
         exSystems = new RegistryCreator();
         printer = new Printer();
         testSale = new Sale(exSystems, printer);
@@ -40,7 +40,7 @@ public class SaleTest {
     }
      
     @AfterEach
-    public void tearDown() {
+    void tearDown() {
         exSystems = null;
         printer = null;
         testSale = null;
@@ -84,7 +84,7 @@ public class SaleTest {
     }
 
     @Test
-    public void testIfVatIsUpdated(){
+    void testIfVatIsUpdated(){
         testSale.registerItem(validItemIdentifier, quantity); 
         double result = testSale.getVat();
         double expectedResult = 45;
@@ -93,7 +93,7 @@ public class SaleTest {
     }
 
     @Test
-    public void testIfRunningTotalIsUpdated(){
+    void testIfRunningTotalIsUpdated(){
         testSale.registerItem(validItemIdentifier, quantity); 
         double result = testSale.getRunningTotal();
         double expectedResult = 345;
@@ -103,7 +103,7 @@ public class SaleTest {
 
 
     @Test
-    public void testEligibleDiscount(){
+     void testCheckForDiscountEligibleDiscountIsApplied(){
         testSale.registerItem(validItemIdentifier, quantity); 
         SaleDTO currentSale =  testSale.checkForDiscount(validCustomerID);
         double result = currentSale.getRunningTotal();
@@ -114,7 +114,7 @@ public class SaleTest {
     }
 
     @Test
-    public void testNotEligibleDiscount(){
+    void testCheckForDiscountNotEligibleDiscountIsNotApplied(){
         testSale.registerItem(validItemIdentifier, quantity); 
         SaleDTO currentSale =  testSale.checkForDiscount(invalidCustomerID);
         double result = currentSale.getRunningTotal();
@@ -125,6 +125,22 @@ public class SaleTest {
     }
 
 
+    @Test
+    void testEndSaleWithNoBoughtItems(){
+        double result = testSale.endSale();
 
+        double expected = 0;
+        assertEquals(expected, result, "Failed to end sale");
+    }
+
+    @Test
+    void testEndSaleWithBoughtItems(){
+       
+        testSale.registerItem(validItemIdentifier, quantity); 
+        double result = testSale.endSale();
+        double expected = 345;
+
+        assertEquals(expected, result, "Failed to end sale");
+    }
 
 }

@@ -57,7 +57,12 @@ public class Sale {
         }
         return currentSale; 
     }
-
+    /**
+     * checks for discount and if customer is eligible it applies the rate of discount on the runningTotal and updates the price.
+     * @param customerID unique int assigned to customer for identification
+     * @return Returns a SaleDTO with runningTotal updated with the discount if the customer is eligible
+     *         if not eligible, the runningTotal remains unchanged.
+     */
     public SaleDTO checkForDiscount(int customerID){ 
         SaleDTO currentSale = new SaleDTO(this);
         DiscountDTO totalDiscount = externalSystems.getDiscountDataBase().searchForDiscount(currentSale, customerID);
@@ -68,7 +73,19 @@ public class Sale {
 
     }
 
+    /**
+     * ends the sales process
+     * @return The final amount to be paid
+     */
+    public double endSale(){
+        this.finalAmount = runningTotal;
+        return finalAmount;
+    }
 
+    /**
+     * Applies the discount to the sales runningTotal
+     * @param totalDiscount the total percentage of discount the customer is eligible for
+     */
     private void applyDiscount(DiscountDTO totalDiscount){
         double appliedDiscount = calculateDiscount(totalDiscount);
         
@@ -76,7 +93,11 @@ public class Sale {
         this.runningTotal = finalPriceAfterDiscount;
 
     }
-
+    /**
+     * Calculates the total percentage of the accumalated discounts.
+     * @param totalDiscount
+     * @return
+     */
     private double calculateDiscount(DiscountDTO totalDiscount){
         double calculatedDiscount = totalDiscount.getItemDiscount() + totalDiscount.getCustomerDiscount() + totalDiscount.getTotalCostDiscount();
 
