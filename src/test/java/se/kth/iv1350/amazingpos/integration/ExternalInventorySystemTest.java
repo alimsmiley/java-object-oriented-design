@@ -75,4 +75,3 @@ public class ExternalInventorySystemTest {
 
 }
 
-//Friday : test for ExternalInventorySystem is finished.
