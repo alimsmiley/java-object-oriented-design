@@ -26,7 +26,9 @@ public class SaleTest {
     private int validCustomerID = 123;
     private int invalidCustomerID = 111;
     
-    
+    private double paidAmountMore = 425;
+    private double paidAmountExact = 345;
+    private Payment payment;
 
 
     
@@ -35,7 +37,6 @@ public class SaleTest {
         exSystems = new RegistryCreator();
         printer = new Printer();
         testSale = new Sale(exSystems, printer);
-        
 
     }
      
@@ -144,6 +145,25 @@ public class SaleTest {
     }
 
     @Test
-    void 
+    void testPayTooMuch(){
+        testSale.registerItem(validItemIdentifier, quantity);
+        testSale.endSale();
+        payment = new Payment(paidAmountMore);
+        double result = testSale.pay(payment);
+        double expectedResult = 80;
+
+        assertEquals(result, expectedResult, "Change is incorrect");
+    }
+    
+    @Test
+    void testPayExact(){
+        testSale.registerItem(validItemIdentifier, quantity);
+        testSale.endSale();
+        payment = new Payment(paidAmountExact);
+        double result = testSale.pay(payment);
+        double expectedResult = 0;
+
+        assertEquals(result, expectedResult, "Change is incorrect");
+    }
 
 }
