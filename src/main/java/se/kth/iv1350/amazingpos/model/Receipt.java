@@ -10,9 +10,9 @@ public class Receipt {
     public Printer printer;
     
     /**
-     * Creates a new receipt.  
-     * @param paidSale 
-     * @param printer 
+     * Creates a new instance of receipt with a {@link paidSale} that uses a {@link printer}.
+     * @param paidSale The sale that has been paid for.
+     * @param printer The printer to be used for printing.
      */
     public Receipt(Sale paidSale, Printer printer){
         this.paidSale = paidSale;

@@ -14,6 +14,9 @@ public class RegistryCreator {
     private ExternalInventorySystem externalInventorySystem;
     private CashRegister cashRegister;
 
+    /**
+     * Creates a new instance of the registry creator.
+     */
     public RegistryCreator(){
 
         discountDataBase = new DiscountDataBase();

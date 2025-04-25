@@ -16,12 +16,12 @@ public class ItemDTO {
     private String name;
     private double vatRate;
     /**
-     * Creates a new instance of ItemDTO give
-     * @param itemIdentifier
-     * @param itemDescription
-     * @param price
-     * @param name
-     * @param vatRate
+     * Creates a new instance of ItemDTO.
+     * @param itemIdentifier    The items identifier.
+     * @param itemDescription   The items description.
+     * @param price The items price.
+     * @param name  The items name.
+     * @param vatRate   The items VAT rate.
      */
     public ItemDTO(int itemIdentifier, String itemDescription, double price, String name, double vatRate){
         this.itemIdentifier = itemIdentifier;
@@ -32,7 +32,7 @@ public class ItemDTO {
     }
     /**
      * Overloaded constructor with a {@link placeHolderDTO} as argument.
-     * @param placeHolderDTO The itemdto used to create a new itemDTO.
+     * @param placeHolderDTO The itemDTO used to create a new itemDTO.
      */
     public ItemDTO(ItemDTO placeHolderDTO){
         this.itemIdentifier = placeHolderDTO.getItemIdentifier();
@@ -43,42 +43,22 @@ public class ItemDTO {
 
     }
 
-    /**
-     * Gets the item identifier from this instance of the itemDTO
-     * @return Item identifier
-     */
     public int getItemIdentifier(){
         return itemIdentifier;
     }
 
-    /**
-     * Gets the item Descrption from this instance of the itemDTO
-     * @return Item description
-     */
     public String getItemDescription(){
         return itemDescription;
     }
 
-    /**
-     * Gets the price of the item from this instance of the itemDTO
-     * @return Price of the item
-     */
     public double getPrice(){
         return price;
     }
 
-    /**
-     * Gets the name of the item from this instance of the itemDTO
-     * @return The name of the item
-     */
     public String getName(){
         return name;
     }
 
-    /**
-     * Gets the vat rate for the item from this instance of the itemDTO
-     * @return The item's vat rate
-     */
     public double getVatRate(){
         return vatRate;
     }

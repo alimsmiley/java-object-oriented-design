@@ -18,7 +18,10 @@ public class ExternalAccountingSystem {
 
     }
 
-
+    /**
+     * Takes a {@link paidSale} and sends it to an external system to update said system.
+     * @param paidSale  The final sale data.
+     */
     public void updateExternalAccountingSystem(SaleDTO paidSale){
 
     } 

@@ -9,16 +9,14 @@ public class ShoppingList {
     private ArrayList<ItemInCart> shoppingList;
 
     /**
-     * Creates an instance of the shopping list
+     * Creates an instance of the shopping list.
      */
     public ShoppingList() {
         this.shoppingList = new ArrayList<>();
     }
 
     /**
-     * Overloaded constructor for shopping list given {@link original} to create a
-     * copy
-     * 
+     * Overloaded constructor for shopping list given {@link original} to create a copy
      * @param original The original Shopping list.
      */
     public ShoppingList(ShoppingList original) {
@@ -30,7 +28,6 @@ public class ShoppingList {
 
     /**
      * Adds an {@link item} to the shopping list with a given {@link quantity}.
-     * 
      * @param item     The item to be added.
      * @param quantity The quantity of the item.
      */
@@ -48,7 +45,6 @@ public class ShoppingList {
 
     /**
      * Searches to see if an {@link item} exsists in the list already.
-     * 
      * @param item The item that is searched for.
      * @return The possition of the found item.
      */
@@ -64,11 +60,6 @@ public class ShoppingList {
         return possition;
     }
 
-    /**
-     * Gets the current shopping list.
-     * 
-     * @return The current shopping list.
-     */
     public ArrayList<ItemInCart> getShoppingList() {
         return this.shoppingList;
 

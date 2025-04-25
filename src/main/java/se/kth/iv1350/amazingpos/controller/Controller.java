@@ -18,11 +18,21 @@ public class Controller {
 
     public static final int MAX_ALLOWED_QUANTITY = 1000;
 
+    /**
+     * Creates an instance of controller.
+     * @param creator   The regisrty creator.
+     * @param printer   The printer.
+     */
     public Controller(RegistryCreator creator, Printer printer){
        this.externalSystems = creator;
        this.printer = printer;  
     }
 
+    /**
+     * Checks to see if the {@link quantity} is a resonable amount.
+     * @param quantity The given quantity of items.
+     * @return  If resonable or not.
+     */
     public boolean isQuantityReasonable(int quantity){
         if(quantity > MAX_ALLOWED_QUANTITY || quantity < 0){
             return false;
@@ -71,8 +81,8 @@ public class Controller {
     }
 
     /**
-     * fetches the final amount that is to be paid by the customer
-     * @return the final amount to be paid
+     * Fetches the final amount that is to be paid by the customer.
+     * @return the final amount to be paid.
      */
     public double concludeSale(){
         double finalAmount = sale.endSale();
@@ -81,7 +91,11 @@ public class Controller {
 
     }
 
-
+    /**
+     * The process of the payment given {@link paidAmount}, also updates the external systems with the same information.
+     * @param paidAmount    The amount paid for the sale.
+     * @return  The change to be given back.
+     */
     public double pay(double paidAmount){
         Payment payment = new Payment(paidAmount);
         double change = sale.pay(payment);

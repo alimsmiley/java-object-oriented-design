@@ -5,11 +5,6 @@ import java.time.LocalTime;
 import se.kth.iv1350.amazingpos.integration.*;
 
 
-
-
-
-
-
 /**
  * One single sale made by one single customer and paid with one payment. 
  */
@@ -26,8 +21,9 @@ public class Sale {
     
             
     /**
-     * Creates a new instance of sale 
-     *
+     * Creates a new instance of sale with {@link exSystems} and {@link printer}.
+     * @param exSystems The external systems.
+     * @param printer   The printer.
      */
     public Sale(RegistryCreator exSystems, Printer printer){
         this.shoppingCart = new ShoppingList();
@@ -59,7 +55,7 @@ public class Sale {
         return currentSale; 
     }
     /**
-     * checks for discount and if customer is eligible it applies the rate of discount on the runningTotal and updates the price.
+     * Checks for discount and if customer is eligible it applies the rate of discount on the runningTotal and updates the price.
      * @param customerID unique int assigned to customer for identification
      * @return Returns a SaleDTO with runningTotal updated with the discount if the customer is eligible
      *         if not eligible, the runningTotal remains unchanged.
@@ -75,22 +71,24 @@ public class Sale {
     }
 
     /**
-     * ends the sales process
+     * Ends the sales process.
      * @return The final amount to be paid
      */
     public double endSale(){
         this.finalAmount = runningTotal;
         return finalAmount;
     }
-
+    /**
+     * The payment process. It calculates how much has been paid, how much to get back in change, 
+     * and also updates the external systemst that need said information.
+     * @param payment   The payment information.
+     * @return  The change to get back.
+     */
     public double pay(Payment payment){
         payment.calculateChange(this); 
         //based on the requirement specification the change will either be zero or a positive amount, 
         //therefore the customer won't be asked to pay more as there are no negative changes
 
-        
-        
-        
         SaleDTO paidSale = new SaleDTO(this);
         externalSystems.getExternalAccountingSystem().updateExternalAccountingSystem(paidSale); 
         externalSystems.getExternalInventorySystem().updateExternalInventorySystem(paidSale); 
@@ -100,8 +98,8 @@ public class Sale {
     }
 
     /**
-     * Applies the discount to the sales runningTotal
-     * @param totalDiscount the total percentage of discount the customer is eligible for
+     * Applies the discount to the sales runningTotal.
+     * @param totalDiscount The total percentage of discount the customer is eligible for.
      */
     private void applyDiscount(DiscountDTO totalDiscount){
         double appliedDiscount = calculateDiscount(totalDiscount);
@@ -116,8 +114,8 @@ public class Sale {
 
     /**
      * Calculates the total percentage of the accumalated discounts.
-     * @param totalDiscount
-     * @return
+     * @param totalDiscount The discounts the customer is eligable for.
+     * @return  The total discount for entire purchase.
      */
     private double calculateDiscount(DiscountDTO totalDiscount){
         double calculatedDiscount = totalDiscount.getItemDiscount() + totalDiscount.getCustomerDiscount() + totalDiscount.getTotalCostDiscount();
@@ -127,15 +125,15 @@ public class Sale {
     /**
      * Adds a specified quantity of an item to the ShoppingCart.
      * @param item Item to be added to the ShoppingCart.
-     * @param quantity 
+     * @param quantity The quantity of said item to be added.
      */
     private void updateShoppingCart(ItemDTO item, int quantity){
         shoppingCart.addToShoppingList(item, quantity);
     }
     /**
      * Calculates and updates the RunningTotal of the Sale.
-     * @param item Item to be bought
-     * @param quantity Quantity of the item to be bought
+     * @param item Item to be bought.
+     * @param quantity Quantity of the item to be bought.
      */
     private void updateRunningTotal(ItemDTO item, int quantity){
 
@@ -147,12 +145,10 @@ public class Sale {
     
 
     /**
-     * Calculates and updates the total vat to be paid for the sale
-     * and for each item.
+     * Calculates and updates the total vat to be paid for the sale and for each item.
      * @param item Item for which the vat is to be calculated
      * @param quantity Quantity of the item
-     * @return Returns the amount of vat to be paid for an item 
-     * multiplied with the quantity. 
+     * @return Returns the amount of vat to be paid for an item multiplied with the quantity. 
      */
     private double updateVat(ItemDTO item, int quantity){
         double vatToPayForItem = item.getPrice()*quantity*item.getVatRate();

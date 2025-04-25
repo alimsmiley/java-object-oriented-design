@@ -6,7 +6,7 @@ package se.kth.iv1350.amazingpos.integration;
 
 /**
  *
- * 
+ * Contains the printers functionality
  */
 public class Printer {
     /**

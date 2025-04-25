@@ -35,7 +35,10 @@ public class ExternalInventorySystem {
 
 
 
-
+    /**
+     * Takes a {@link paidSale} and sends it to an external system to update said system.
+     * @param paidSale The final sale data.
+     */
     public void updateExternalInventorySystem(SaleDTO paidSale){
         
     } 

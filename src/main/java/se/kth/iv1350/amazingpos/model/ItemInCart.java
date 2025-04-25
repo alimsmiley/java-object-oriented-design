@@ -18,26 +18,21 @@ public class ItemInCart {
         this.item = item;
         this.quantity = quantity;
     }
-    /**
-     * Gets the quantity of the item.
-     * @return The quantity.
-     */
-    public int getQuantity(){
-        return this.quantity;
-    }
-    /**
-     * Gets the item dto of the item in the cart.
-     * @return The item dto.
-     */
-    public ItemDTO getItemDTO(){
-        return this.item;
-    }
+    
     /**
      * Adds {@link quantity} of the item in the cart.
      * @param quantity The quantity to add.
      */
     public void addQuantity(int quantity){
         this.quantity += quantity;
+    }
+
+    public int getQuantity(){
+        return this.quantity;
+    }
+
+    public ItemDTO getItemDTO(){
+        return this.item;
     }
 
 }

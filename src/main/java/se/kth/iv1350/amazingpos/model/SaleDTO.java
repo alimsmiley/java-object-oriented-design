@@ -18,7 +18,7 @@ public class SaleDTO {
     private double vat;
 
     /**
-     * Creates a new instance of SaleDTO given {@link currentSale} and {@link item}
+     * Creates a new instance of SaleDTO.
      * @param currentSale The current sale
      * @param item  The item to be added.
      */
@@ -30,7 +30,10 @@ public class SaleDTO {
         this.vat = currentSale.getVat();
     }
 
-
+    /**
+     * Overloaded constructor that creates a new instance of SaleDTO given a {@link currentSale} instead.
+     * @param currentSale   The current active sale.
+     */
     public SaleDTO(Sale currentSale){
         this.listOfRegisteredItem = currentSale.getShoppingCart();
         this.runningTotal = currentSale.getRunningTotal();
@@ -46,38 +49,23 @@ public class SaleDTO {
             System.out.println("Item invalid");
         }
     }
-    /**
-     * Gets the last registered item.
-     * @return  The last registered item
-     */
+
     public ItemDTO getLastRegisteredItem() {
         return lastRegisteredItem;
     }
-    /**
-     * Gets the list of all registered items
-     * @return  List of registered items.
-     */
+
     public ShoppingList getListOfRegisteredItem(){
         return new ShoppingList(this.listOfRegisteredItem);
     }
-    /**
-     * Gets the current running total.
-     * @return  Running total.
-     */
+
     public double getRunningTotal(){
         return runningTotal;
     }
-    /**
-     * Gets the time of sale.
-     * @return  Sale time.
-     */
+
     public LocalTime getSaleTime(){
         return saleTime;
     }
-    /**
-     * Gets the total vat ammount. 
-     * @return  Total ammount of vat.
-     */
+
     public double getTotalVat(){
         return vat;
     }
