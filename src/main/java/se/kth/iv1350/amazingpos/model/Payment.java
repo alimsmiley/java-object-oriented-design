@@ -4,11 +4,36 @@
  */
 package se.kth.iv1350.amazingpos.model;
 
+import se.kth.iv1350.amazingpos.model.Sale;
+
 /**
  *
  * Represents a payment made for a single specific sale.
  */
 public class Payment {
-    private int paidAmount;
-    private int change;
+    private double paidAmount;
+    private double change;
+
+
+    public Payment(double paidAmount){
+        this.paidAmount = paidAmount;
+        //this.change = change;
+    }
+
+
+    public void calculateChange(Sale paidSale){
+        //Negative change if paidAmount < finalAmount  -> add error message, should pay more
+
+    
+        this.change = this.paidAmount - paidSale.getFinalAmount() ;
+
+        
+            
+       
+    }
+
+    public double getChange(){
+        return this.change;
+    }
+
 }

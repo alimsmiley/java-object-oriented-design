@@ -82,6 +82,21 @@ public class Sale {
         return finalAmount;
     }
 
+    public double pay(Payment payment){
+        payment.calculateChange(this); 
+    
+        if(payment.getChange() < 0){
+            System.out.println("Remaining amount to pay: " + (payment.getChange() * -1));
+            
+           
+            
+            
+        }
+        return payment.getChange();
+
+    }
+
+
     /**
      * Applies the discount to the sales runningTotal
      * @param totalDiscount the total percentage of discount the customer is eligible for

@@ -1,7 +1,11 @@
 
 package se.kth.iv1350.amazingpos.controller;
-import se.kth.iv1350.amazingpos.integration.*;
+import se.kth.iv1350.amazingpos.integration.Printer;
+import se.kth.iv1350.amazingpos.integration.RegistryCreator;
+
 import se.kth.iv1350.amazingpos.model.*;
+import se.kth.iv1350.amazingpos.model.Payment;
+
 
 /**
  * This is the applications only controller
@@ -74,6 +78,19 @@ public class Controller {
         double finalAmount = sale.endSale();
 
         return finalAmount;
+
+    }
+
+
+    public double pay(double paidAmount){
+        Payment payment = new Payment(paidAmount);
+        double change = sale.pay(payment);
+
+        //As the view is not designed in this assigment:
+        //if the change is negative, the view will call the pay method again (until the remaining amount is zero) for the remaining amount to be paid
+        
+       
+        return change;
 
     }
 
