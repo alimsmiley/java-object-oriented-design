@@ -4,7 +4,9 @@ Skriv om sale så att getListOfRegisteredItem skickar en deep copy istället.
 
 
 
-ooooooooooooooooooooooooooooooooo Datum: 24/4 ooooooooooooooooooooooooooooooooooooooooooooo
+ooooooooooooooooooooooooooooooooo Datum: 25/4 ooooooooooooooooooooooooooooooooooooooooooooo
 
 Kvar att göra: 
-1. 
+1. Payment klassen
+    - Payment constructor som tar emot PaidAmount
+    - calculateTotalAmount
