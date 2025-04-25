@@ -1,16 +1,16 @@
 package se.kth.iv1350.amazingpos.controller;
 
+import org.junit.jupiter.api.AfterEach;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import se.kth.iv1350.amazingpos.integration.Printer;
 import se.kth.iv1350.amazingpos.integration.RegistryCreator;
-import se.kth.iv1350.amazingpos.model.*;
+import se.kth.iv1350.amazingpos.model.Payment;
+import se.kth.iv1350.amazingpos.model.Sale;
+import se.kth.iv1350.amazingpos.model.SaleDTO;
 
 public class ControllerTest {
     static  Sale currentSale;
@@ -20,17 +20,28 @@ public class ControllerTest {
 
     private int validItemIdentifier = 1;
     private int inValidItemIdentifier = 7;
-    private int  quantity = 2;
+    private int  quantity = 1;
     private int  invalidMaxQuantity = 1001;
     private int  invalidNegativeQuantity = -1001;
     private int customerID = 123;
 
+    private double paidAmountMore = 1150;
+    private double paidAmountExact = 765;
+
+    private int validItemIdentifier1 = 1;
+    private int validItemIdentifier2 = 2;
+    private int validItemIdentifier3 = 3;
+   
+
     @BeforeEach
     void setUpClass(){
+        
         printer = new Printer();
         externalSystems = new RegistryCreator();
         controller = new Controller(externalSystems, printer);
         controller.startSale();
+
+    
     }
 
     @AfterEach
@@ -93,4 +104,21 @@ public class ControllerTest {
         assertEquals(expected, result, "Failed to conclude sale");
 
     }
+
+    @Test
+    void testPayReturnsRightChangeAmount(){
+        currentSale.registerItem(validItemIdentifier1, quantity);
+        currentSale.registerItem(validItemIdentifier2, quantity*2);
+        currentSale.registerItem(validItemIdentifier3, quantity*3);
+
+        double result = controller.pay(paidAmountExact);
+        double expected = 0;
+
+        assertEquals(expected, result, "Change amount doesnt match!");
+
+
+
+
+    }
+
 }

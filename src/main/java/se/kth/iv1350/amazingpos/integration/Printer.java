@@ -11,12 +11,7 @@ import java.util.*;
  * Contains the printers functionality
  */
 public class Printer {
-    /**
-     * Creates an instance of printer
-     */
-    public Printer (){
-        
-    }
+   
 
     public void printReceipt(Receipt receipt){
         //Datum + Tid

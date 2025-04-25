@@ -13,7 +13,9 @@ public class PlaceholderDatabase {
             new ItemDTO(1, "Arla laktosfri mjölk",
              150, "Mjölk", 0.15), 
             new ItemDTO(2, "Extra virgin olive oil",
-             200, "Olive oil", 0.20) };
+             200, "Olive oil", 0.20), 
+            new ItemDTO(3, "Messsmör original 5%",30, "Messmör", 0.25) };
+
        
            
         ItemDTO searchedItem = null;
