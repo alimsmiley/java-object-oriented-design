@@ -27,7 +27,6 @@ public class Payment {
      */
     public void calculateChange(Sale paidSale){
         //Negative change if paidAmount < finalAmount  -> add error message, should pay more
-
         this.change = this.paidAmount - paidSale.getFinalAmount() ;
 
     }
