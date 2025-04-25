@@ -2,9 +2,9 @@
 package se.kth.iv1350.amazingpos.controller;
 import se.kth.iv1350.amazingpos.integration.Printer;
 import se.kth.iv1350.amazingpos.integration.RegistryCreator;
-
-import se.kth.iv1350.amazingpos.model.*;
 import se.kth.iv1350.amazingpos.model.Payment;
+import se.kth.iv1350.amazingpos.model.Sale;
+import se.kth.iv1350.amazingpos.model.SaleDTO;
 
 
 /**
@@ -89,10 +89,13 @@ public class Controller {
         //As the view is not designed in this assigment:
         //if the change is negative, the view will call the pay method again (until the remaining amount is zero) for the remaining amount to be paid
         
+        externalSystems.getCashRegister().updateCashRegister(payment);
        
         return change;
 
     }
+
+    
 
 
 

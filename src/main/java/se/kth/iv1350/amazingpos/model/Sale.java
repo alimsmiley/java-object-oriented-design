@@ -3,7 +3,8 @@ package se.kth.iv1350.amazingpos.model;
 import java.time.LocalTime;
 
 import se.kth.iv1350.amazingpos.integration.*;
-import se.kth.iv1350.amazingpos.integration.*;
+
+
 
 
 
@@ -84,18 +85,19 @@ public class Sale {
 
     public double pay(Payment payment){
         payment.calculateChange(this); 
-    
-        if(payment.getChange() < 0){
-            System.out.println("Remaining amount to pay: " + (payment.getChange() * -1));
-            
-           
-            
-            
-        }
+        //based on the requirement specification the change will either be zero or a positive amount, 
+        //therefore the customer won't be asked to pay more as there are no negative changes
+
+        
+        
+        
+        SaleDTO paidSale = new SaleDTO(this);
+        externalSystems.getExternalAccountingSystem().updateExternalAccountingSystem(paidSale); 
+        externalSystems.getExternalInventorySystem().updateExternalInventorySystem(paidSale); 
+        
         return payment.getChange();
 
     }
-
 
     /**
      * Applies the discount to the sales runningTotal
@@ -107,7 +109,11 @@ public class Sale {
         double finalPriceAfterDiscount = this.runningTotal - this.runningTotal*appliedDiscount;
         this.runningTotal = finalPriceAfterDiscount;
 
+        double finalVATAfterDiscount = this.vat - this.vat*appliedDiscount;
+        this.vat = finalVATAfterDiscount;
+
     }
+
     /**
      * Calculates the total percentage of the accumalated discounts.
      * @param totalDiscount
@@ -115,7 +121,6 @@ public class Sale {
      */
     private double calculateDiscount(DiscountDTO totalDiscount){
         double calculatedDiscount = totalDiscount.getItemDiscount() + totalDiscount.getCustomerDiscount() + totalDiscount.getTotalCostDiscount();
-
         return calculatedDiscount;
     }
 

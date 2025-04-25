@@ -9,6 +9,26 @@ package se.kth.iv1350.amazingpos.model;
  * 
  */
 public class CashRegister {
-    private int balance;
+    private double balance;
+
+
+    public CashRegister(){
+        this.balance = 5000;
+    }
+
+
+    
+
+
+    public void updateCashRegister(Payment payment){
+        this.balance += payment.getPaidAmount() - payment.getChange();
+
+    }
+
+    public double getBalance(){
+        return this.balance;
+    }
+
+
 
 }

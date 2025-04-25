@@ -4,8 +4,6 @@
  */
 package se.kth.iv1350.amazingpos.model;
 
-import se.kth.iv1350.amazingpos.model.Sale;
-
 /**
  *
  * Represents a payment made for a single specific sale.
@@ -34,6 +32,10 @@ public class Payment {
 
     public double getChange(){
         return this.change;
+    }
+
+    public double getPaidAmount(){
+        return this.paidAmount;
     }
 
 }

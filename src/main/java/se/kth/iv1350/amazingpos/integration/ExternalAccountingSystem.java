@@ -4,6 +4,8 @@
  */
 package se.kth.iv1350.amazingpos.integration;
 
+import se.kth.iv1350.amazingpos.model.SaleDTO;
+
 /**
  *
  * Includes data about accounting information
@@ -15,4 +17,14 @@ public class ExternalAccountingSystem {
     ExternalAccountingSystem(){
 
     }
+
+
+    public void updateExternalAccountingSystem(SaleDTO paidSale){
+
+    } 
+
+   
+
+    
+
 }

@@ -4,6 +4,7 @@
  */
 package se.kth.iv1350.amazingpos.integration;
 import se.kth.iv1350.amazingpos.model.ItemDTO;
+import se.kth.iv1350.amazingpos.model.SaleDTO;
 import se.kth.iv1350.amazingpos.placeholders.PlaceholderDatabase;
 
 
@@ -31,6 +32,13 @@ public class ExternalInventorySystem {
         }
         return item;
     }
+
+
+
+
+    public void updateExternalInventorySystem(SaleDTO paidSale){
+        
+    } 
 }
 
 
