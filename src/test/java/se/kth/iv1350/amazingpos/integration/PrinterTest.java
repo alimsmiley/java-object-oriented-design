@@ -1,7 +1,5 @@
 package se.kth.iv1350.amazingpos.integration;
 
-
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
