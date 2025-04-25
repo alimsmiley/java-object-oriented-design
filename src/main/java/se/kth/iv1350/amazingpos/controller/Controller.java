@@ -99,6 +99,7 @@ public class Controller {
     public double pay(double paidAmount){
         Payment payment = new Payment(paidAmount);
         double change = sale.pay(payment);
+        sale.printReceipt();
 
         //As the view is not designed in this assigment:
         //if the change is negative, the view will call the pay method again (until the remaining amount is zero) for the remaining amount to be paid

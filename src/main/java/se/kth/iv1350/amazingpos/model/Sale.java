@@ -17,6 +17,7 @@ public class Sale {
     private Receipt receipt;
     private RegistryCreator externalSystems;
     private Printer printer;
+    private Payment payment;
     //private Sale paidSale;     Vad ska denna användas till?
     
             
@@ -85,7 +86,8 @@ public class Sale {
      * @return  The change to get back.
      */
     public double pay(Payment payment){
-        payment.calculateChange(this); 
+        this.payment = payment;
+        this.payment.calculateChange(this); 
         //based on the requirement specification the change will either be zero or a positive amount, 
         //therefore the customer won't be asked to pay more as there are no negative changes
 
@@ -95,6 +97,11 @@ public class Sale {
         
         return payment.getChange();
 
+    }
+
+    public void printReceipt(double paid, double change){
+        receipt = new Receipt(this);
+        printer.printReceipt(receipt);
     }
 
     /**
@@ -178,6 +185,10 @@ public class Sale {
 
     public Receipt getReceipt(){
         return receipt;
+    }
+
+    public Payment getPayment() {
+        return payment;
     }
 
 }
