@@ -20,7 +20,7 @@ public class ControllerTest {
 
     private int validItemIdentifier = 1;
     private int inValidItemIdentifier = 7;
-    private int  quantity = 1;
+    private int  quantity = 2;
     private int  invalidMaxQuantity = 1001;
     private int  invalidNegativeQuantity = -1001;
     private int customerID = 123;
@@ -31,6 +31,8 @@ public class ControllerTest {
     private int validItemIdentifier1 = 1;
     private int validItemIdentifier2 = 2;
     private int validItemIdentifier3 = 3;
+
+    private int  quantityX = 1;
    
 
     @BeforeEach
@@ -106,19 +108,33 @@ public class ControllerTest {
     }
 
     @Test
-    void testPayReturnsRightChangeAmount(){
-        currentSale.registerItem(validItemIdentifier1, quantity);
-        currentSale.registerItem(validItemIdentifier2, quantity*2);
-        currentSale.registerItem(validItemIdentifier3, quantity*3);
+    void testPayReturnsZeroChange(){
+        controller.addItem(validItemIdentifier1, quantityX);
+        controller.addItem(validItemIdentifier2, quantityX*2); 
+        controller.addItem(validItemIdentifier3, quantityX*3); 
+        controller.concludeSale();
 
         double result = controller.pay(paidAmountExact);
         double expected = 0;
 
         assertEquals(expected, result, "Change amount doesnt match!");
 
+    }
 
+    @Test
+    void testPayReturnsRightChangeAmount(){
+        controller.addItem(validItemIdentifier1, quantityX);
+        controller.addItem(validItemIdentifier2, quantityX*2); 
+        controller.addItem(validItemIdentifier3, quantityX*3); 
+        controller.concludeSale();
 
+        double result = controller.pay(paidAmountMore);
+        double expected = 385;
+
+        assertEquals(expected, result, "Change amount doesnt match!");
 
     }
+
+
 
 }

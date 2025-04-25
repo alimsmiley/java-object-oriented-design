@@ -24,5 +24,8 @@ public class Main {
 
         Controller contr = new Controller(registryCreator, printer);
         View view = new View(contr);
+
+
+        view.runFakeExecution(); 
     }
 }

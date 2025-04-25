@@ -47,12 +47,16 @@ public class Sale {
 
 
         ItemDTO item = externalSystems.getExternalInventorySystem().lookupItem(itemIdentifier);
-        SaleDTO currentSale = new SaleDTO(this, item);
+        
 
         if(item != null){
             updateShoppingCart(item, quantity);
             updateRunningTotal(item, quantity);
         }
+
+        SaleDTO currentSale = new SaleDTO(this, item);
+
+
         return currentSale; 
     }
     /**

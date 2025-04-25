@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="se.kth.iv1350.amazingpos.startup.MainTest" time="0.008" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="se.kth.iv1350.amazingpos.startup.MainTest" time="0.562" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,8 +15,9 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-23\bin"/>
-    <property name="sun.java.command" value="C:\Users\10478ALES\AppData\Local\Temp\surefire9767812446509129874\surefirebooter-20250424200441804_3.jar C:\Users\10478ALES\AppData\Local\Temp\surefire9767812446509129874 2025-04-24T20-04-41_502-jvmRun1 surefire-20250424200441804_1tmp surefire_0-20250424200441804_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\10478ALES\AppData\Local\Temp\surefire15661121574597026194\surefirebooter-20250425163414835_3.jar C:\Users\10478ALES\AppData\Local\Temp\surefire15661121574597026194 2025-04-25T16-34-13_598-jvmRun1 surefire-20250425163414835_1tmp surefire_0-20250425163414835_2tmp"/>
     <property name="jdk.debug" value="release"/>
+    <property name="test" value="se.kth.iv1350.amazingpos.startup.MainTest#testMain"/>
     <property name="surefire.test.class.path" value="C:\Users\10478ALES\OneDrive - KTH\TIDAB\Object oriented design\java-object-oriented-design\target\test-classes;C:\Users\10478ALES\OneDrive - KTH\TIDAB\Object oriented design\java-object-oriented-design\target\classes;C:\Users\10478ALES\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.3\junit-jupiter-api-5.10.3.jar;C:\Users\10478ALES\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\10478ALES\.m2\repository\org\junit\platform\junit-platform-commons\1.10.3\junit-platform-commons-1.10.3.jar;C:\Users\10478ALES\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\10478ALES\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.3\junit-jupiter-params-5.10.3.jar;C:\Users\10478ALES\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.3\junit-jupiter-engine-5.10.3.jar;C:\Users\10478ALES\.m2\repository\org\junit\platform\junit-platform-engine\1.10.3\junit-platform-engine-1.10.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\10478ALES"/>
@@ -30,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\10478ALES\AppData\Local\Temp\surefire9767812446509129874\surefirebooter-20250424200441804_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\10478ALES\AppData\Local\Temp\surefire15661121574597026194\surefirebooter-20250425163414835_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="23.0.1+11-39"/>
@@ -59,5 +60,60 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="testMain" classname="se.kth.iv1350.amazingpos.startup.MainTest" time="0.004"/>
+  <testcase name="testMain" classname="se.kth.iv1350.amazingpos.startup.MainTest" time="0.404">
+    <system-out><![CDATA[   **A new sale has been started** 
+
+Item ID: 1
+Item name: Mjölk
+Item cost: 150.0 SEK
+VAT : 15.0%
+Item description: Arla laktosfri mjölk
+
+Running total: 172.5 SEK
+Total VAT: 22.5 SEK
+
+
+Item ID: 2
+Item name: Olive oil
+Item cost: 200.0 SEK
+VAT : 20.0%
+Item description: Extra virgin olive oil
+
+Running total: 412.5 SEK
+Total VAT: 62.5 SEK
+
+
+Item ID: 3
+Item name: Messmör
+Item cost: 30.0 SEK
+VAT : 25.0%
+Item description: Messsmör original 5%
+
+Running total: 450.0 SEK
+Total VAT: 70.0 SEK
+
+
+Invalid item test
+Item invalid
+
+
+
+
+Amount to pay: 450.0
+--------------Beginning of receipt-------------------
+Time of sale: 16:34:18.938916600
+Mjölk 1 x 150.0 150.0
+Olive oil 1 x 200.0 200.0
+Messmör 1 x 30.0 30.0
+Total: 450.0
+VAT: 70.0
+Paid amount: 1000.0
+Change: 550.0
+--------------End of receipt-------------------
+
+
+
+Change to give customer: 550.0
+]]></system-out>
+  </testcase>
 </testsuite>
