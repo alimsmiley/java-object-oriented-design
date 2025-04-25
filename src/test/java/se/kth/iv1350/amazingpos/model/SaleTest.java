@@ -31,6 +31,10 @@ public class SaleTest {
     private Payment payment;
 
 
+    double paid = 1000;
+    double change;
+
+
     
     @BeforeEach 
     void setUp(){
@@ -164,6 +168,19 @@ public class SaleTest {
         double expectedResult = 0;
 
         assertEquals(result, expectedResult, "Change is incorrect");
+    }
+
+
+
+    
+    @Test
+    void testPrintReceipt() {
+        testSale.registerItem(validItemIdentifier, quantity);
+        testSale.endSale();
+        payment = new Payment(paidAmountExact);
+        testSale.pay(payment);
+        testSale.printReceipt(paid, 655);
+
     }
 
 }
