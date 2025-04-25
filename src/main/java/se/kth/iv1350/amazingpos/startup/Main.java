@@ -15,7 +15,7 @@ public class Main {
      * @param args The application does not take any command line parameters.
      */
     public static void main(String[] args){
-     
+        
         
       
         RegistryCreator registryCreator = new RegistryCreator();
