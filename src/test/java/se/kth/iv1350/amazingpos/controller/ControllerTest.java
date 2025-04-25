@@ -52,6 +52,11 @@ public class ControllerTest {
         externalSystems = null;
         controller = null;    
     }
+
+    @Test
+    void testStartSale(){
+        controller.startSale();
+    }
  
     @Test
     void testAddItemInvalidMaxQuantity() {

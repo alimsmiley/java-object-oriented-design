@@ -4,7 +4,7 @@ package se.kth.iv1350.amazingpos.integration;
 import se.kth.iv1350.amazingpos.model.CashRegister;
 
 /**
- * Creator which creates the external systems like accounting system and inventory.
+ * Creator which creates the instances of classes that interacts with external systems like accounting system and inventory.
  * 
  */
 public class RegistryCreator {
@@ -15,7 +15,7 @@ public class RegistryCreator {
     private CashRegister cashRegister;
 
     /**
-     * Creates a new instance of the registry creator.
+     * Creates a new instance of the registry creator. 
      */
     public RegistryCreator(){
 

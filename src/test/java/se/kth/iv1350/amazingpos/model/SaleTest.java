@@ -179,7 +179,7 @@ public class SaleTest {
         testSale.endSale();
         payment = new Payment(paidAmountExact);
         testSale.pay(payment);
-        testSale.printReceipt(paid, 655);
+        testSale.printReceipt();
 
     }
 

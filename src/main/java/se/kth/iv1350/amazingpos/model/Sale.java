@@ -18,7 +18,7 @@ public class Sale {
     private RegistryCreator externalSystems;
     private Printer printer;
     private Payment payment;
-    //private Sale paidSale;     Vad ska denna användas till?
+    
     
             
     /**
@@ -102,8 +102,10 @@ public class Sale {
         return payment.getChange();
 
     }
-
-    public void printReceipt(double paid, double change){
+    /**
+     * Prints the receipt to prove the sale.
+     */
+    public void printReceipt(){
         receipt = new Receipt(this);
         printer.printReceipt(receipt);
     }

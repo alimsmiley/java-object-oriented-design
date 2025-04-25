@@ -1,9 +1,10 @@
 package se.kth.iv1350.amazingpos.placeholders;
-//Make sure that placeholders folder has a small p
 import se.kth.iv1350.amazingpos.model.*;
 
 
-
+/*
+ * Placeholder that gets called instead of real external systems.
+ */
 public class PlaceholderDatabase {
     // an array with a bunch of basically item DTOS
    

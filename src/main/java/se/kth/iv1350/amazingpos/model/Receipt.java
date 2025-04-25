@@ -2,7 +2,6 @@
 package se.kth.iv1350.amazingpos.model;
 import java.time.LocalTime;
 
-import se.kth.iv1350.amazingpos.integration.Printer;
 
 /**
  * Represents one receipt, which proves the payment of one sale. 

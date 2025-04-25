@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package se.kth.iv1350.amazingpos.integration;
 import se.kth.iv1350.amazingpos.model.*;
 import java.util.*;
@@ -13,6 +10,10 @@ import java.util.*;
 public class Printer {
    
 
+    /**
+     * Prints {@link receipt} to the stream System.Out
+     * @param receipt The receipt contains the data needed to print a receipt
+     */
     public void printReceipt(Receipt receipt){
         //Datum + Tid
         System.out.println("Time of sale: " + receipt.getSaleTime());
@@ -23,7 +24,11 @@ public class Printer {
         System.out.println("Paid amount: " + receipt.getAmountPaid());
         System.out.println("Change: " + receipt.getChange());
     }
-
+    /**
+     * Helps printReceipt print out all fields for individual items.
+     * @param shoppingCart A list containing all purchased items
+     * 
+     */
     private void itemsToPrint(ArrayList<ItemInCart> shoppingCart){
         for (int i = 0; i < shoppingCart.size(); i++){
             System.out.println(shoppingCart.get(i).getItemDTO().getName() + " " 

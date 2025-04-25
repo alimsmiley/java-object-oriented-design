@@ -40,9 +40,6 @@ public class PrinterTest {
     }
 
 
-
-
-
     @Test
     void testPrintReceipt() {
 

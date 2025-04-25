@@ -41,14 +41,14 @@ public class ExternalInventorySystemTest {
     }
 
     @Test
-    void  testItemDTOIsReturned(){
+    void  testLookupItemItemDTOIsReturned(){
         ItemDTO item = exInventory.lookupItem(2);
         assertTrue(item instanceof ItemDTO);
 
     }
 
     @Test
-    void correctItemNameReturnedForASpecificItemIdentifier(){
+    void testLookupItemCorrectItemNameReturnedForASpecificItemIdentifier(){
         String expectedResult = "Mjölk";
         ItemDTO itemDTO = exInventory.lookupItem(1);
         assertTrue(itemDTO.getName().equals(expectedResult), "Wrong name returned for the specified item!");
