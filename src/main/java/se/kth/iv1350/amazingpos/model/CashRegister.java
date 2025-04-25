@@ -24,7 +24,6 @@ public class CashRegister {
      */
     public void updateCashRegister(Payment payment){
         this.balance += payment.getPaidAmount() - payment.getChange();
-
     }
 
     public double getBalance(){
