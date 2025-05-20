@@ -33,7 +33,7 @@ public class Controller {
      * @param quantity The given quantity of items.
      * @return  If resonable or not.
      */
-    public boolean isQuantityReasonable(int quantity){
+    private boolean isQuantityReasonable(int quantity){
         if(quantity > MAX_ALLOWED_QUANTITY || quantity < 0){
             return false;
         }
